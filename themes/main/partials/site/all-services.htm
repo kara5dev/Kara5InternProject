@@ -1,0 +1,53 @@
+{% set services = [
+  {
+    title: 'Brand Strategy',
+    image: 'https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/680f6d08f9c9634e26a17a20_service-thumb-1.webp'
+  },
+  {
+    title: 'Product Design',
+    image: 'https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681a00030fb880d42614fd13_thumb-3-p-2000.webp'
+  },
+  {
+    title: 'Web Development',
+    image: 'https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681a000328158ceff1d31300_thumb-4-p-2000.webp'
+  },
+  {
+    title: 'Digital Marketing',
+    image:'https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681a00032b54210dc786e968_thumb-5-p-2000.webp'
+  }
+] %}
+<div class="service-wrapper">
+        {% for service in services %}
+           <div class="custom-item">
+                <div class="custom-item-heading">
+                    <div class="custom-item-header">
+                        <h2>{{service.title}}</h2>
+                    </div>
+                    <div class="custom-item-icon">
+                        {% partial 'icons/closed-eye' %}
+                    </div>
+                </div>
+                <div class="custom-item-content">
+                    <div class="custom-item-content-left">
+                        <div class="what-we-do">
+                            <h4>What we do</h4>
+                            <p>Sincerely, it's the final time that they've been given a furnished common. To avoid class, tidy them up. He has a wide-ranging influence.</p>
+                            <p>At our agency, we know how important good design is to drawing people in.</p>
+                            <div class="list-tools">
+                            <h4>Tools we use</h4>
+                                <ul>
+                                    <li>Data-Driven Strategies</li>
+                                    <li>Design And Development</li>
+                                    <li>Transparent Communication</li>
+                                    <li>Client-Centric Approach</li>
+                                </ul>
+                            </div>
+                        </div>  
+                    </div>  
+                    <div class="custom-item-content-right">
+                        <img src={{service.image}} alt="{{service.title}}"/>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+</div>  
