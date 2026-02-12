@@ -1,8 +1,16 @@
-title = "Projects"
-layout = "default"
 url = "/projects"
-==
+layout = "default"
+title = "Projects"
 
+[collection projects]
+handle = "Projects\Project"
+sortDirection = "desc"
+==
+{% set firstProjects = projects.paginate(2) %}
+{% set secondProjects = projects|slice(2,3) %}
+{% set thirdProjects = projects|slice(5,2)%}
+{% set fourthProjects = projects|slice(7,3)%}
+{% set fifthProjects = projects|slice(10,2)%}
 <div class="project-section section-padding--y">
     <div class="container">
          <div class="section-heading-blog portfolio section-padding--b-2">
@@ -42,60 +50,75 @@ url = "/projects"
                     <div>Branding</div>
                 </a>
         </div>
-        {% partial 'site/all-featured-projects'%}
-        <div role="list" class="projects-layout-2 w-dyn-items">
-              <div role="list" class="w-dyn-item">
-                <div class="projects-item">
+          <div role="list" class="projects-layout w-dyn-items">
+            {% for firstProject in firstProjects %}
+                <div role="list" class="w-dyn-item">
+                  <div class="projects-item">
                     <a href="#" class="projects-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681dfa73b040d0d87d96aa05_thumb-8.webp" class="projects-item-thumb" alt="Purse" />
+                        <img src="{{ firstProject.banner.path }}" class="projects-item-thumb" alt="Purse" />
                     </a>
                     <a href="#" class="projects-item-thumb-wrap">
-                        <h2 class="project-item-title">CoreVision</h2>
-                    </a>
-                </div>
-               </div>
-               <div role="list" class="w-dyn-item">
-                <div class="projects-item">
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681dfa8e8d537a0640b0407a_thumb-9.webp" class="projects-item-thumb" alt="Purse" />
-                    </a>
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <h2 class="project-item-title">NovaEdge</h2>
+                        <h2 class="project-item-title">{{firstProject.title}}</h2>
                     </a>
                 </div>
-               </div>
-               <div role="list" class="w-dyn-item">
-                <div class="projects-item">
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681dfaa7773a80cb2b4b2733_thumb-10.webp" class="projects-item-thumb" alt="Purse" />
-                    </a>
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <h2 class="project-item-title">InnoVista</h2>
-                    </a>
                 </div>
-              </div>
+            {% endfor %}
             </div>
-            <div role="list" class="projects-layout w-dyn-items">
-              <div role="list" class="w-dyn-item">
-                <div class="projects-item">
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681dfac0c4978668102b04b7_thumb-11-p-2000.webp" class="projects-item-thumb" alt="Purse" />
-                    </a>
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <h2 class="project-item-title">BrightFold</h2>
-                    </a>
-                </div>
-               </div>
+            <div role="list" class="projects-layout-2 w-dyn-items">
+            {% for secondProject in secondProjects %}
                <div role="list" class="w-dyn-item">
-                <div class="projects-item">
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681dfaed3aac346ea7c9214b_thumb-12.webp" class="projects-item-thumb" alt="Purse" />
-                    </a>
-                    <a href="#" class="projects-item-thumb-wrap">
-                        <h2 class="project-item-title">Design Lab</h2>
-                    </a>
-                </div>
-              </div>
+                        <div class="projects-item">
+                             <a href="#" class="projects-item-thumb-wrap">
+                                <img src="{{secondProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
+                            </a>
+                            <a href="#" class="projects-item-thumb-wrap">
+                                <h2 class="project-item-title">{{ secondProject.title }}</h2>
+                            </a>
+                        </div>
+                </div> 
+            {% endfor %}
             </div>
+            <div role="list" class="projects-layout-3 w-dyn-items">
+             {% for thirdProject in thirdProjects %}
+             <div role="list" class="w-dyn-item">
+                        <div class="projects-item">
+                             <a href="#" class="projects-item-thumb-wrap">
+                                <img src="{{thirdProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
+                            </a>
+                            <a href="#" class="projects-item-thumb-wrap">
+                                <h2 class="project-item-title">{{ thirdProject.title }}</h2>
+                            </a>
+                        </div>
+             </div>
+             {% endfor %}   
+            </div>
+             <div role="list" class="projects-layout-2 w-dyn-items">
+                   {% for fourthProject in fourthProjects %}
+                      <div role="list" class="w-dyn-item">
+                        <div class="projects-item">
+                             <a href="#" class="projects-item-thumb-wrap">
+                                <img src="{{fourthProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
+                            </a>
+                            <a href="#" class="projects-item-thumb-wrap">
+                                <h2 class="project-item-title">{{ fourthProject.title }}</h2>
+                            </a>
+                        </div>
+                        </div>
+                   {% endfor %}
+             </div>  
+             <div role="list" class="projects-layout w-dyn-items">
+                 {% for fifthProject in fifthProjects %}
+                      <div role="list" class="w-dyn-item">
+                        <div class="projects-item">
+                             <a href="#" class="projects-item-thumb-wrap">
+                                <img src="{{fifthProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
+                            </a>
+                            <a href="#" class="projects-item-thumb-wrap">
+                                <h2 class="project-item-title">{{ fifthProject.title }}</h2>
+                            </a>
+                        </div>
+                        </div>
+                   {% endfor %}
+             </div>
     </div>
 </div>

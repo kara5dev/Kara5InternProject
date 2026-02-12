@@ -1,5 +1,6 @@
-{% set post = __SELF__.post %}
-
+{% set post = blogPost.post %}
+{% set categories = blogCategories.categories %}
+{% set posts = blogPosts.posts %}
 <div class="post-content section-padding--y">
     <div class="container">
         <div class="post-heading">
@@ -36,53 +37,50 @@
                 </div>
             </div>  
         </div>
+        {% set currentCategories = post.categories %}
+
         <div class="related-articles-wrapper blog-content">
-             <div class="blog-item">
-                <a href="#">
-                    <div class="blog-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681b089953b224e105d964ab_thumb-3.webp" alt="Blog Item">
-                    </div>
-                <div class="blog-item-body">
-                    <div class="card-explanation">
-                        <h6 class="card-text">Make CMS work smarter in Webflow</h6>
-                    </div>
-                    <div class="card-dates">
-                        <div class="card-time">
-                            {% partial 'icons/time' %}
-                            <p>3 min</p>
+            {% for relatedPost in posts %}
 
-                        </div>
-                        <div class="card-date">
-                            {% partial 'icons/calendar' %}
-                            <p>May 7,2025</p>
-                        </div>
-                    </div>
-                </div>
-                </a>
-             </div>
-              <div class="blog-item">
-                <a href="#">
-                    <div class="blog-item-thumb-wrap">
-                        <img src="https://cdn.prod.website-files.com/680cea8b34808eee313320a7/681b08bd5eff013f7f2cc41b_thumb-4.webp" alt="Blog Item">
-                    </div>
-                <div class="blog-item-body">
-                    <div class="card-explanation">
-                        <h6 class="card-text">Writing clear copy for the web</h6>
-                    </div>
-                    <div class="card-dates">
-                        <div class="card-time">
-                            {% partial 'icons/time' %}
-                            <p>2 min</p>
+                {% if relatedPost.id != post.id %}
 
-                        </div>
-                        <div class="card-date">
-                            {% partial 'icons/calendar' %}
-                            <p>May 7,2025</p>
-                        </div>
+                    {% set isRelated = false %}
+
+                    {% for category in relatedPost.categories %}
+
+                        {% if currentCategories.contains(category) %}
+                            {% set isRelated = true %}
+                        {% endif %}
+
+                    {% endfor %}
+                    {% if isRelated %}
+                     <div class="blog-item">
+                         <a href="{{ 'news-single'|page ({ slug: relatedPost.slug }) }}">
+                            <div class="blog-item-thumb-wrap">
+                                <img src="{{ relatedPost.featured_images[0].path }}" alt="Blog Item">
+                            </div>
+                            <div class="blog-item-body">
+                                <div class="card-explanation">
+                                    <h6 class="card-text">{{relatedPost.title}}</h6>
+                                </div>
+                                <div class="card-dates">
+                                    <div class="card-time">
+                                        {% partial 'icons/time' %}
+                                        <p>3 min</p>
+
+                                    </div>
+                                    <div class="card-date">
+                                        {% partial 'icons/calendar' %}
+                                        <p>{{ relatedPost.published_at|date('M d, Y') }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                </a>
-             </div>
+                    {% endif %}
+                {% endif %}
+
+            {% endfor %}
         </div>
     </div>
-</div>
+</div>  

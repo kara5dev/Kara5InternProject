@@ -1,0 +1,40 @@
+uuid: c4def44e-b084-48bb-9584-c0e3fb8f1634
+handle: Projects\Project
+type: entry
+name: Project
+drafts: false
+
+primaryNavigation:
+    label: Project
+    icon: octo-icon-file
+    order: 110
+
+navigation:
+    parent: Projects\Project
+    icon: icon-magic
+    order: 10
+
+fields:
+    content:
+        tab: Edit
+        label: Content
+        type: richeditor
+        span: adaptive
+
+    title:
+        tab: Edit
+        type: text
+        label: Title
+    banner:
+        tab: Manage
+        label: Banner
+        type: fileupload
+        mode: image
+        maxFiles: 1
+
+    categories:
+        tab: Manage
+        label: Categoires
+        commentAbove: "Please select the categories that the project belongs to"
+        type: entries
+        source: Projects\Category

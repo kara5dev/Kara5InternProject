@@ -1,0 +1,23 @@
+uuid: 80dddcdd-028b-44b7-92fa-9e0db3d1ebe2
+handle: Projects\Category
+type: structure
+name: Category
+drafts: true
+
+structure:
+    maxDepth: 1
+
+navigation:
+    icon: icon-tree
+    parent: Projects\Project
+    order: 10
+
+fields:
+    title:
+        label: Title
+        type: text
+        tab: Edit
+    description: 
+        label: Description
+        type: text
+        tab: Edit

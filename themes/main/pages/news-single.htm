@@ -5,6 +5,18 @@ title = "News Single"
 [blogPost]
 slug = "{{ :slug }}"
 categoryPage = "blog"
-==
 
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "about-us"
+postPage = "about-us"
+==
 {% component 'blogPost' %}
