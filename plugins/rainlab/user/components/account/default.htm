@@ -1,4 +1,19 @@
 {# Placeholder #}
-<h5>
-    Please see the documentation for detailed instructions on setting up the account component
-</h5>
+<div class="account-component">
+        <div class="check-icon">
+            <i class="ri-checkbox-circle-fill check-circle"></i>
+        </div>
+        <div class="account-content">
+            <h3>Your email address has been verified successfully</h3>
+            <div class="red-button sign-in-btn">
+                <a class="nav-link" href="{{ '/login'|page }}">
+                     Sign Now
+                <span class="arrow-wrapper">
+                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                </span> 
+
+                </a>
+            </div>
+        </div>
+</div>

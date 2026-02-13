@@ -12,7 +12,6 @@ use Cms\Classes\ComponentBase;
 use Flash;
 use NotFoundException;
 use Redirect;
-
 /**
  * Registration displays registration forms
  */
@@ -64,7 +63,7 @@ class Registration extends ComponentBase
             $user = $this->createNewUser($input);
         }
 
-        Auth::login($user);
+        // Auth::login($user);
 
         /**
          * @event rainlab.user.register
@@ -91,7 +90,8 @@ class Registration extends ComponentBase
         // if ($redirect = Cms::redirectIntendedFromPost()) {
         //     return $redirect;
         // }
-        Flash::success('You have been registered successfully!');
+        Flash::success('You have been registered successfully check your email!');
+        $user->sendEmailVerificationNotification();
         return Redirect::to('/');
         }
 
