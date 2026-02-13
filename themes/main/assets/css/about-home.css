@@ -817,7 +817,7 @@ color: red;
 .related-articles-wrapper{
     padding-top: var(--sec-pad-2);
 }
-.reach-out{
+.form-wrapper{
     display: flex;
     align-items: center;
     justify-content: center;

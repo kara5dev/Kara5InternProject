@@ -5,7 +5,7 @@
 
 {# User has a valid token to reset their password #}
 {% elseif __SELF__.hasToken %}
-    {% set redirectPage = 'account/login' %}
+    {% set redirectPage = 'login' %}
     {% set passwordHandler = 'onResetPassword' %}
 
 {# User is changing their password normally #}
@@ -14,10 +14,10 @@
     {% set passwordHandler = 'onChangePassword' %}
 {% endif %}
 
-<form method="post" data-request="{{ passwordHandler }}" data-request-flash>
+<form method="post" data-request="{{ passwordHandler }}" data-request-flash data-request-validate>
     <input type="hidden" name="redirect" value="{{ redirectPage|page }}" />
 
-    <div class="text-center pb-3">
+    {# <div class="text-center pb-3">
         {% if __SELF__.hasInvite %}
             <h1 class="h2 mb-3">Welcome!</h1>
         {% elseif __SELF__.hasToken %}
@@ -26,12 +26,12 @@
             <h1 class="h2 mb-3">Change password</h1>
         {% endif %}
         <h2 class="h5 fw-normal">Enter a new password.</h2>
-    </div>
-
-    {% if __SELF__.hasToken %}
+    </div> #}
+{# 
+    {% if __SELF__.hasToken %} #}
         <input type="hidden" name="token" value="{{ __SELF__.token }}" />
         <input type="hidden" name="email" value="{{ __SELF__.email }}" />
-    {% else %}
+    {# {% else %}
         <div class="form-floating my-3">
             <input
                 name="current_password"
@@ -42,9 +42,24 @@
             />
             <label for="inputPassword">Current password</label>
         </div>
-    {% endif %}
+    {% endif %} #}
 
-    <div class="form-floating my-3">
+     <div class="contact-us-select-wrap">
+        <div class="contact-us-input-wrap register-input-wrap">
+            <label for="password" class="contact-us-label">Password</label>
+            <input type="password" class="contact-us-input" id="password" placeholder="Enter your password " maxlength="256"
+                name="password">
+                <p class="error-message" data-validate-for="password"></p>
+        </div>
+        <div class="contact-us-input-wrap register-input-wrap">
+            <label for="password_confirmation" class="contact-us-label">Confirm Password</label>
+            <input type="password" class="contact-us-input" id="password_confirmation" placeholder="Confirm your password " maxlength="256"
+                name="password_confirmation">
+                <p class="error-message" data-validate-for="password"></p>
+        </div>
+     </div>
+
+        {# <div class="form-floating my-3">
         <input
             name="password"
             type="password"
@@ -55,6 +70,7 @@
         />
         <label for="inputPassword">Password</label>
     </div>
+    
 
     <div class="form-floating my-3">
         <input
@@ -66,9 +82,9 @@
             autocomplete="new-password"
         />
         <label for="inputPasswordConfirmation">Confirm password</label>
-    </div>
+    </div> #}
 
-    <button
+    {# <button
         class="btn btn-primary btn-lg w-100 py-2"
         data-attach-loading
         type="submit">
@@ -77,5 +93,15 @@
         {% else %}
             Reset password
         {% endif  %}
-    </button>
+    </button> #}
+     <div class="red-button contact-submit-btn">
+                <button class="nav-link" type="submit">
+                    Confirm
+                <span class="arrow-wrapper">
+                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                </span> 
+
+                </button>
+     </div>
 </form>

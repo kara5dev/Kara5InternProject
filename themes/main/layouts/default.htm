@@ -16,7 +16,7 @@
   </head>
   <body>
     {% flash  %}
-        <div class="alert alert-success">
+        <div class="alert alert-{{type}}"  data-request-flash>
            {{message}}
            <button class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
         </div>

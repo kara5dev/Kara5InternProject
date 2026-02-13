@@ -105,6 +105,7 @@ class Plugin extends PluginBase
             \RainLab\User\Components\ResetPassword::class => 'resetPassword',
             \RainLab\User\Components\Authentication::class => 'authentication',
             \RainLab\User\Components\Registration::class => 'registration',
+            \RainLab\User\Components\ResetEmail::class => 'reset-email',
         ];
     }
 

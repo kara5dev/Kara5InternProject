@@ -1,74 +1,43 @@
 {% if __SELF__.showLoginForm %}
     <div class="collapse show login-collapse">
-        <form method="post" data-request="onLogin" data-request-flash>
-            <input type="hidden" name="redirect" value="true" />
-
-            <div class="text-center pb-3">
-                <h1 class="h2 mb-3">Sign in to your account</h1>
-                <h2 class="h5 fw-normal">Enter your email address and password</h2>
+        <form method="post" data-request="onLogin"  data-request-flash>
+        <div class="contact-us-select-wrap ">
+             <div class="contact-us-input-wrap register-input-wrap">
+                <label for="username" class="contact-us-label">Username</label>
+                <input type="text" class="contact-us-input" id="username" placeholder="Enter your username" maxlength="256"
+                name="username">
+                {# <p class="error-message" data-validate-for="username"></p> #}
+             </div>
+            <div class="contact-us-input-wrap register-input-wrap">
+                <label for="password" class="contact-us-label">Password</label>
+                <input type="password" class="contact-us-input" id="password" placeholder="Enter your password " maxlength="256"
+                name="password">
+                {# <p class="error-message" data-validate-for="password"></p> #}
             </div>
-
-            {% if __SELF__.showUsernameField %}
-                <div class="form-floating my-3">
-                    <input
-                        name="username"
-                        type="text"
-                        class="form-control"
-                        id="inputUsername"
-                    />
-                    <label for="inputEmail">Username</label>
-                </div>
-            {% else %}
-                <div class="form-floating my-3">
-                    <input
-                        name="email"
-                        type="email"
-                        class="form-control"
-                        id="inputEmail"
-                        placeholder="name@example.com"
-                        oninput="document.getElementById('inputRecoverEmail').value = this.value"
-                    />
-                    <label for="inputEmail">Email address</label>
-                </div>
-            {% endif %}
-
-            <div class="form-floating my-3">
-                <input
-                    name="password"
-                    type="password"
-                    class="form-control"
-                    id="inputPassword"
-                    placeholder="Password"
-                />
-                <label for="inputPassword">Password</label>
-            </div>
-
-            <button
-                class="btn btn-primary btn-lg w-100 py-2"
-                data-attach-loading
-                type="submit">
-                Sign in
+        </div>
+        <div class="red-button contact-submit-btn">
+            <button class="nav-link" type="submit">
+                Login now
+                <span class="arrow-wrapper">
+                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                </span> 
             </button>
-
-            {% if __SELF__.showRememberMe %}
-                <div class="text-center my-3">
-                    <div class="form-check form-check-inline">
-                        <input
-                            name="remember"
-                            type="checkbox"
-                            class="form-check-input"
-                            id="inputRemember"
-                            checked
-                        />
-                        <label class="form-check-label" for="inputRemember">
-                            Remember me
-                        </label>
-                    </div>
-                </div>
-            {% endif %}
+        </div>
+             <div>
+                 <p class="mt-5 mb-1 text-body-secondary">
+                    Don't have an account? <a href="{{ 'register'|page }}">Sign up here</a>
+                </p>
+                <p class="mt-1 mb-3 text-body-secondary">
+                    Forgot password?
+                    <a href="{{ 'forgot-password'|page}}">
+                         Change it here!
+                    </a>
+                </p>
+             </div>
         </form>
 
-        <div class="text-center">
+        {# <div class="text-center">
             {% if __SELF__.canRegister %}
                 <p class="mt-5 mb-1 text-body-secondary">
                     New user?
@@ -89,11 +58,11 @@
                     </a>
                 </p>
             {% endif %}
-        </div>
+        </div> #}
     </div>
 {% endif %}
 
-{% if __SELF__.usePasswordRecovery %}
+{# {% if __SELF__.usePasswordRecovery %}
     <div class="collapse login-collapse">
         <form method="post" data-request="onRecoverPassword" data-request-flash>
             <input type="hidden" name="redirect" value="true" />
@@ -216,4 +185,4 @@
             </p>
         </div>
     </div>
-{% endif %}
+{% endif %} #}

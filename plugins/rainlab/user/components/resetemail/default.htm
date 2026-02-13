@@ -1,0 +1,21 @@
+<form method="post" data-request="onRecoverPassword" data-request-flash data-request-validate>
+            <input type="hidden" name="redirect" value="true" />
+             <div class="contact-us-select-wrap ">
+                 <div class="contact-us-input-wrap register-input-wrap">
+                    <label for="email" class="contact-us-label">Email</label>
+                    <input type="email" class="contact-us-input" id="email" placeholder="Email address" maxlength="256"
+                        name="email">
+                     <p class="error-message" data-validate-for="email"></p>
+                 </div>
+             </div>
+             <div class="red-button contact-submit-btn">
+                <button class="nav-link" type="submit">
+                 Send Email
+                <span class="arrow-wrapper">
+                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                </span> 
+
+                </button>
+            </div>
+</form>

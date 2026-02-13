@@ -9,6 +9,7 @@ use RainLab\User\Models\UserLog;
 use RainLab\User\Models\Setting;
 use RainLab\User\Helpers\User as UserHelper;
 use NotFoundException;
+use Redirect;
 
 /**
  * Authentication displays login forms
@@ -83,6 +84,8 @@ class Authentication extends ComponentBase
         if ($redirect = Cms::redirectIntendedFromPost()) {
             return $redirect;
         }
+        Flash::success("You have been logged in successfully!");
+        return Redirect::to('/');
     }
 
     /**
