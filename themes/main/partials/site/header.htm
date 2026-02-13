@@ -37,12 +37,15 @@
           <li class="nav-item">
             <a class="nav-link navbar-hovers" href="/projects">Projects</a>
           </li>
+          {% if user %}
            <li class="nav-item">
             <a class="nav-link navbar-hovers" href="/pricing">Pricing </a>
           </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link navbar-hovers" href="/blog">Blog </a>
           </li>
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle arrow-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages 
                 {% partial 'icons/arrow-down'%}
@@ -63,6 +66,17 @@
         {% partial 'icons/cart' %}
             Cart
         </a>
+        {% if user %}
+          <a data-request="onLogout" data-request-data="{ redirect: '/' }" class="nav-link">
+            {% partial 'icons/logout-box'%}
+            Sign out
+            </a>  
+        {% else %}
+            <a  href="{{ 'login'|page }}" class="nav-link">
+            {% partial 'icons/logout-box'%}
+            Log in
+            </a> 
+        {% endif %}
         <div class="red-button d-flex align-items-center">
             <a class="nav-link" href="/contact">
                 Contact

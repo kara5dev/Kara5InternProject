@@ -2,6 +2,10 @@ title = "login"
 layout = "default"
 url = "/login"
 
+[session]
+security = "guest"
+redirect = "home"
+
 [authentication]
 rememberMe = "never"
 twoFactorAuth = 1
