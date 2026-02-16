@@ -52,8 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
        { title: ".about-title", trigger: ".about-title-text"},
        { title: ".subtitle-about-home-gsap", trigger: ".subtitle-about-home-gsap-wrapper"},
        { title: ".about-text-home", trigger: ".about-text"},
+       { title: ".subtitle-trusted-brands-home", trigger: ".subtitle-trusted-brands-home-wrapper" },
+       { title: ".title-trusted-brands h2", trigger: ".title-trusted-brands"}
       
      ]
+     const staggerElements = [
+        {title: ".about-content p", trigger: ".about-content" },
+        {title: ".trusted-partner-item img", trigger: ".trusted-partner-item" }
+    ]
      elements.forEach((el)=>{
         gsap.fromTo(el.title, {y: 300, opacity: 0}, 
             {duration: 0.8, opacity:1,y:0, ease: "power1.out",scrollTrigger : {
@@ -63,13 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }}
         )
      })
-     gsap.fromTo(".about-content p", {y: 300, opacity: 0}, 
-            {duration: 0.8, opacity:1,y:0, ease: "power1.out",stagger:0.3,scrollTrigger : {
-                trigger: ".about-content",
+     staggerElements.forEach((stagEl) => {
+            gsap.fromTo(stagEl.title, {y: 300, opacity: 0}, 
+                {duration: 0.8, opacity:1,y:0, ease: "power1.out",stagger:0.3,scrollTrigger : {
+                trigger: stagEl.trigger,
                 start: "top bottom" ,
                 // toggleActions: "play pause resume reset"
-            }}
+                }
+            }
         )
+     })
+    
     
 });
 
