@@ -40,47 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       });
       gsap.registerPlugin(ScrollTrigger);
-      
-    //  const elements = [
-    //    {title: ".hero-top-text", trigger: ".hero-top-text-wrap"},
-    //    {title: ".subtitle-gsap", trigger: ".subtitle-gsap-wrapper"},
-    //    { title: ".hero-title-text", trigger: ".hero-title"},
-    //    { title: ".hero-banner", trigger: ".hero-banner-wrapper"},   
-    //    { title: ".hero-text", trigger: ".hero-text-wrap"},
-    //    { title: ".hero-buttons", trigger: ".hero-buttons-wrapper"},
-    //    { title: ".gsap-arrow-link" , trigger: ".gsap-arrow-wrapper"},
-    //    { title: ".about-title", trigger: ".about-title-text"},
-    //    { title: ".subtitle-about-home-gsap", trigger: ".subtitle-about-home-gsap-wrapper"},
-    //    { title: ".about-text-home", trigger: ".about-text"},
-    //    { title: ".subtitle-trusted-brands-home", trigger: ".subtitle-trusted-brands-home-wrapper" },
-    //    { title: ".title-trusted-brands h2", trigger: ".title-trusted-brands"},
-    //    { title: ".subtitle-services-home-gsap", trigger: ".subtitle-services-home-gsap-wrapper"},
-    //     { title: ".title-services-home h2", trigger: ".title-services-home"}
-      
-    //  ]
-    //  const staggerElements = [
-    //     {title: ".about-content p", trigger: ".about-content" },
-    //     {title: ".trusted-partner-item img", trigger: ".trusted-partner-item" }
-    // ]
-    //  elements.forEach((el)=>{
-    //     gsap.fromTo(el.title, {y: 300, opacity: 0}, 
-    //         {duration: 0.8, opacity:1,y:0, ease: "power1.out",scrollTrigger : {
-    //             trigger: el.trigger,
-    //             start: "top bottom",
-    //             // toggleActions: "play pause resume reset"
-    //         }}
-    //     )
-    //  })
-    //  staggerElements.forEach((stagEl) => {
-    //         gsap.fromTo(stagEl.title, {y: 300, opacity: 0}, 
-    //             {duration: 0.8, opacity:1,y:0, ease: "power1.out",stagger:0.3,scrollTrigger : {
-    //             trigger: stagEl.trigger,
-    //             start: "top bottom" ,
-    //             // toggleActions: "play pause resume reset"
-    //             }
-    //         }
-    //     )
-    //  })
+    
     
     gsap.utils.toArray("[data-animate-parent]").forEach((parent)=>{
         const children = parent.querySelectorAll("[data-animate]");
