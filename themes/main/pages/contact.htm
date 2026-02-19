@@ -6,19 +6,19 @@ title = "Contact"
 ==
 <div class="contact-section section-padding--y">
 <div class="container">
-    <div class="section-heading-blog section-padding--b-2">
-        <div class="hero-subtitle">
+    <div class="section-heading-blog section-padding--b-2" data-animate-parent>
+        <div class="hero-subtitle" data-animate>
             <div class="hero-subtitle-icon">
                 {% partial 'icons/earth' %}
             </div>
             <div class="hero-subtitle-text">CONTACT US</div>
         </div>
-        <div class="brand-title">
+        <div class="brand-title" data-animate>
             <h2>Together, let’s take your business further</h2>
         </div>
     </div>
-    <div class="contact-boxes">
-        <div class="contact-box">
+    <div class="contact-boxes" data-animate-parent>
+        <div class="contact-box" data-animate>
             <div class="icon-content">
                 {% partial 'icons/phone' %}
                 <p>(609) 598-3065 7980</p>
@@ -27,7 +27,7 @@ title = "Contact"
                 Need a quick response? Reach out to us on WhatsApp
             </div>
         </div>
-        <div class="contact-box">
+        <div class="contact-box" data-animate>
             <div class="icon-content">
                 {% partial 'icons/mail' %}
                 <p>hello@dexina.com</p>
@@ -36,7 +36,7 @@ title = "Contact"
                 Prefer email? Drop us a message anytime you want.
             </div>
         </div>
-        <div class="contact-box">
+        <div class="contact-box" data-animate>
             <div class="icon-content">
                 {% partial 'icons/map-pin' %}
                 <p>CA, USA</p>
@@ -47,19 +47,21 @@ title = "Contact"
         </div>
     </div>
     <div class="form-wrapper section-padding--t">
-        <div class="section-heading ">
-                <div class="hero-subtitle">
+        <div class="section-heading " data-animate-parent>
+                <div class="hero-subtitle" data-animate>
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/target' %}
                     </div>
                     <div class="hero-subtitle-text">GET IN TOUCH</div>
                 </div>
-                <div class="brand-title">
+                <div class="brand-title" data-animate>
                     <h2>Reach Out To Us</h2>
                 </div>
         </div>
-        <div class="contact-us-form">
+        <div data-animate-parent>
+        <div class="contact-us-form" data-animate>  
             {% component 'contactForm' %}
+        </div>
         </div>
     </div>
 </div>

@@ -3,36 +3,38 @@
 {% set posts = blogPosts.posts %}
 <div class="post-content section-padding--y">
     <div class="container">
-        <div class="post-heading">
-            <h1>{{post.title}}</h1>
+        <div class="post-heading" data-animate-parent>
+            <h1 data-animate>{{post.title}}</h1>
         </div>
-        <div class="date-content">
-            <div class="date-time">
+        <div class="date-content" data-animate-parent>
+            <div class="date-time" data-animate>
                 {%  partial 'icons/time'%}
                 <p>18 min</p>
             </div>
-            <div class="date-calendar">
+            <div class="date-calendar" data-animate>
                 {% partial 'icons/calendar'%}
                 <p>{{post.published_at|date('M d, Y')}}</p>
             </div>
         </div>
         {% if post.featured_images|length %}
-            <div class="blog-img">
-                <img src="{{post.featured_images[0].path}}" alt="BannerImg">
+            <div class="blog-img" data-animate-parent>
+                <img src="{{post.featured_images[0].path}}" alt="BannerImg" data-animate>
             </div>
          {% endif %}
-        <div class="blog-layout-content blog-dynamic-content">
+         <div data-animate-parent>
+        <div class="blog-layout-content blog-dynamic-content" data-animate>
                 {{post.content_html|raw}}
         </div>
+        </div>
         <div class="related-articles section-padding--t">
-            <div class="section-heading ">
-                <div class="hero-subtitle">
+            <div class="section-heading " data-animate-parent>
+                <div class="hero-subtitle" data-animate>
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/article' %}
                     </div>
                     <div class="hero-subtitle-text">ARTICLES</div>
                 </div>
-                <div class="brand-title">
+                <div class="brand-title" data-animate>
                     <h2>Related Blogs</h2>
                 </div>
             </div>  
@@ -55,11 +57,11 @@
                     {% endfor %}
                     {% if isRelated %}
                      <div class="blog-item">
-                         <a href="{{ 'news-single'|page ({ slug: relatedPost.slug }) }}">
-                            <div class="blog-item-thumb-wrap">
+                         <a href="{{ 'news-single'|page ({ slug: relatedPost.slug }) }}" data-animate-parent>
+                            <div class="blog-item-thumb-wrap" data-animate>
                                 <img src="{{ relatedPost.featured_images[0].path }}" alt="Blog Item">
                             </div>
-                            <div class="blog-item-body">
+                            <div class="blog-item-body" data-animate>
                                 <div class="card-explanation">
                                     <h6 class="card-text">{{relatedPost.title}}</h6>
                                 </div>

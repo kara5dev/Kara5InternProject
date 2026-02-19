@@ -13,46 +13,46 @@ sortDirection = "desc"
 {% set fifthProjects = projects|slice(10,2)%}
 <div class="project-section section-padding--y">
     <div class="container">
-         <div class="section-heading-blog portfolio section-padding--b-2">
-                <div class="hero-subtitle">
+         <div class="section-heading-blog portfolio section-padding--b-2" data-animate-parent>
+                <div class="hero-subtitle" data-animate>
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/earth' %}
                     </div>
                     <div class="hero-subtitle-text">OUR PORTFOLIO</div>
                 </div>
-                <div class="brand-title">
+                <div class="brand-title" data-animate>
                     <h2>Crafted with purpose, built for impact</h2>
                 </div>
         </div>
-        <div class="category-menu">
+        <div class="category-menu"  data-animate-parent>
                 <a href="#"
-                    class="category-item active">
+                    class="category-item active" data-animate>
                     <div>All Blog</div>
                 </a>
                 <a href="#"
-                    class="category-item">
+                    class="category-item" data-animate>
                     <div>Dashboard</div>
                 </a>
                  <a href="#"
-                    class="category-item">
+                    class="category-item" data-animate>
                     <div>Web App</div>
                 </a>
                  <a href="#"
-                    class="category-item">
+                    class="category-item" data-animate>
                     <div>App Design </div>
                 </a>
                  <a href="#"
-                    class="category-item">
+                    class="category-item" data-animate>
                     <div>Web Design </div>
                 </a>
                  <a href="#"
-                    class="category-item">
+                    class="category-item" data-animate>
                     <div>Branding</div>
                 </a>
         </div>
-          <div role="list" class="projects-layout w-dyn-items">
+          <div role="list" class="projects-layout w-dyn-items" data-animate-parent>
             {% for firstProject in firstProjects %}
-                <div role="list" class="w-dyn-item">
+                <div role="list" class="w-dyn-item" data-animate>
                   <div class="projects-item">
                     <a href="#" class="projects-item-thumb-wrap">
                         <img src="{{ firstProject.banner.path }}" class="projects-item-thumb" alt="Purse" />
@@ -64,9 +64,9 @@ sortDirection = "desc"
                 </div>
             {% endfor %}
             </div>
-            <div role="list" class="projects-layout-2 w-dyn-items">
+            <div role="list" class="projects-layout-2 w-dyn-items" data-animate-parent >
             {% for secondProject in secondProjects %}
-               <div role="list" class="w-dyn-item">
+               <div role="list" class="w-dyn-item" data-animate>
                         <div class="projects-item">
                              <a href="#" class="projects-item-thumb-wrap">
                                 <img src="{{secondProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
@@ -78,9 +78,9 @@ sortDirection = "desc"
                 </div> 
             {% endfor %}
             </div>
-            <div role="list" class="projects-layout-3 w-dyn-items">
+            <div role="list" class="projects-layout-3 w-dyn-items" data-animate-parent >
              {% for thirdProject in thirdProjects %}
-             <div role="list" class="w-dyn-item">
+             <div role="list" class="w-dyn-item"  data-animate>
                         <div class="projects-item">
                              <a href="#" class="projects-item-thumb-wrap">
                                 <img src="{{thirdProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
@@ -92,9 +92,9 @@ sortDirection = "desc"
              </div>
              {% endfor %}   
             </div>
-             <div role="list" class="projects-layout-2 w-dyn-items">
+             <div role="list" class="projects-layout-2 w-dyn-items" data-animate-parent>
                    {% for fourthProject in fourthProjects %}
-                      <div role="list" class="w-dyn-item">
+                      <div role="list" class="w-dyn-item"  data-animate>
                         <div class="projects-item">
                              <a href="#" class="projects-item-thumb-wrap">
                                 <img src="{{fourthProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
@@ -106,9 +106,9 @@ sortDirection = "desc"
                         </div>
                    {% endfor %}
              </div>  
-             <div role="list" class="projects-layout w-dyn-items">
+             <div role="list" class="projects-layout w-dyn-items" data-animate-parent>
                  {% for fifthProject in fifthProjects %}
-                      <div role="list" class="w-dyn-item">
+                      <div role="list" class="w-dyn-item" data-animate >
                         <div class="projects-item">
                              <a href="#" class="projects-item-thumb-wrap">
                                 <img src="{{fifthProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
