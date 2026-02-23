@@ -1167,6 +1167,10 @@ color: red;
 .sign-in-btn a{    
     text-align: center;
 }
+.download-button a{
+    color: white;
+    text-decoration: none;
+}
 @media screen and (max-width:1199px){
     .blog-item-body{
         gap: 16px;

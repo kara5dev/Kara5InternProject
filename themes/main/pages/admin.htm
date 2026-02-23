@@ -1,0 +1,110 @@
+url = "/admin-user"
+layout = "default"
+title = "admin-user"
+
+[session]
+security = "user"
+redirect = "home"
+checkToken = 0
+==
+<?php
+use Illuminate\Support\Facades\Storage;
+
+function onStart()
+{
+    $files = collect(Storage::disk('media')->files('templates'))
+        ->map(function ($file) {
+            return [
+                'name' => basename($file),
+                'path' => Storage::disk('media')->url($file),
+                'extension' => pathinfo($file, PATHINFO_EXTENSION),
+                'raw_path' => $file,
+            ];
+        });
+
+    $this['files'] = $files;
+}
+function onDownload(){
+    $file = post("file");
+    return Storage::disk("media")->download($file);
+}
+function onUpload(){
+    $file = post('image');
+    if(!$file){
+        throw new ApplicationExcepiton('No file uploaded');
+    }
+    $path = Storage::disk("media")->putFileAs('templates', $file, $file->getClientOriginalName());
+     $files = collect(Storage::disk('media')->files('templates'))
+        ->map(function ($file) {
+            return [
+                'name' => basename($file),
+                'path' => Storage::disk('media')->url($file),
+                'extension' => strtolower(pathinfo($file, PATHINFO_EXTENSION)),
+                'raw_path' => $file,
+            ];
+        });
+    $this["files"] = $files;
+
+     Flash::success('File uploaded successfully!');
+}
+?>
+==
+<div class="admin-section section-padding--y">
+    <div class="container">
+        <div class="section-heading-blog section-padding--b-2">
+                <div class="hero-subtitle">
+                    <div class="hero-subtitle-icon">
+                        {% partial 'icons/earth' %}
+                    </div>
+                    <div class="hero-subtitle-text">IMAGES</div>
+                </div>
+                <div class="brand-title">
+                    <h2>Our nice designs</h2>
+                </div>
+               <div class="white-button">
+                    <form data-request="onUpload"  data-request-update="'#media-list': ''" enctype="multipart/form-data">
+                    <input type="file" accept="image/*,video/*" required>
+                    <button type="submit" class="nav-link contact-link">
+                        Upload Image
+                        <span class="arrow-wrapper">
+                            <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                            <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                        </span>
+                    </button>
+                    </form>
+                </div> 
+        </div>
+        <div class="content-section">
+            <div class="blog-content" id="media-list">
+               {% for file in files %}
+                <div class="blog-item">
+                     <a href="#" data-animate-parent>
+                        <div class="blog-item-thumb-wrap" data-animate>
+                            {% if file.extension in ['jpg','jpeg','png','webp'] %}
+                                <img src="{{ file.path }}" alt="{{ file.name }}">
+                            {% endif %}
+                             {% if file.extension in ['mp4','webm'] %}
+                                <video controls width="300">
+                                    <source src="{{ file.path }}">
+                                </video>
+                            {% endif %}
+                        </div>
+                        <div class="blog-item-body" data-animate>
+                            <div class="red-button download-button">
+                            <a class="nav-link contact-link" href="javascript:;" data-request="onDownload" data-request-data="file: '{{ file.raw_path }}'">
+                                Download
+                                <span class="arrow-wrapper">
+                                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                                </span>
+                            </a>
+                            </div>
+                        </div>
+                    </a>
+                  
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
