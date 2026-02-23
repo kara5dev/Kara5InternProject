@@ -93,7 +93,7 @@ class Registration extends ComponentBase
         Flash::success('You have been registered successfully check your email!');
         $user->sendEmailVerificationNotification();
         return Redirect::to('/');
-        }
+    }
 
     /**
      * createNewUser implements the logic for creating a new user
@@ -127,7 +127,7 @@ class Registration extends ComponentBase
         ]);
         
       
-        
+
         return $user;
     }
 

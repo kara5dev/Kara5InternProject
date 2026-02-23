@@ -9,7 +9,7 @@
         "october/rain": "^4.0",
         "laravel/framework": "^12.0",
         "october/all": "^4.0",
-        "rainlab/builder-plugin": "^2.0",
+        "rainlab/builder-plugin": "^3.0",
         "rainlab/deploy-plugin": "^2.2",
         "offline/oc-vite-plugin": "^2.0",
         "rainlab/user-plugin": "^3.1",

@@ -1,0 +1,6 @@
+plugin:
+    name: 'template.templates::lang.plugin.name'
+    description: 'template.templates::lang.plugin.description'
+    author: matej
+    icon: oc-icon-adjust
+    homepage: ''

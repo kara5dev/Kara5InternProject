@@ -81,7 +81,6 @@ class ResetPassword extends ComponentBase
         if ($redirect = Cms::redirectFromPost()) {
             return $redirect;
         }
-    
     }
 
     /**
