@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{'assets/css/bootstrap.min.css'|theme}}" rel="stylesheet" />
+    <link href="{{'assets/css/style.css'|theme}}" rel="stylesheet" /> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" rel="stylesheet" >
+    <link href="{{'assets/css/hero-style.css'|theme}}" rel="stylesheet">
+    <link href="{{'assets/css/about-home.css'|theme}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <title>Dexina</title>
+    <script src="{{ 'assets/js/bootstrap.bundle.min.js'|theme}} "></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="{{'assets/js/script.js'|theme}}"></script>
+   
+  </head>
+  <body>
+    {% flash  %}
+        <div class="alert alert-{{type}}"  data-request-flash>
+           {{message}}
+           <button class="alert-close" onclick="this.parentElement.style.display='none';">&times;</button>
+        </div>
+    {% endflash %}
+    <div class="admin-wrapper">
+    {% partial 'site/admin-header'%}
+    <main class="main-content" role="main">{% page %}</main>
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    {% framework extras %}
+  </body>
+</html>

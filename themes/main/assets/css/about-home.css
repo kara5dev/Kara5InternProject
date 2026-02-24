@@ -2,6 +2,12 @@
 :root {
     --sec-pad: max(5rem, 10vw);
     --sec-pad-2:max(1rem,2vw);
+    --base-clr: #11121a;
+    --text-clr: #e6e6ef;
+    --secondary-text-clr: #b0b3c1;
+    --hover-clr: #222533;
+    --line-clr: #42434a;
+    --active-clr: #411515;
 }
 .about-layout{
    display: flex;   
@@ -1172,9 +1178,68 @@ color: red;
     text-decoration: none;
 }
 .file-input{
+    display: none;
+}
+.file-label{
+    margin-top: max(1rem,2vw);
+    background-color: var(--hover-clr);
+    color: var(--text-clr);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: max(1rem,2vw);
+    transition: all 0.8s ease;
+}
+.file-label:hover{
+    background-color: var(--base-clr);
+}
+.admin-wrapper{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.sidebar-admin{
+   box-sizing: border-box;
+   width: 250px;
+   background-color: var(--base-clr);
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+     border-right: 1px solid var(--line-clr);
    
-    padding: max(1rem,1vw);
-
+}
+.sidebar-admin ul{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.sidebar-admin > ul > li:first-child{
+    display: flex;
+    margin-bottom: 16px;
+}
+.sidebar-admin ul li a{
+    border-radius: .5em;
+    padding: 20px 15px;
+    text-decoration: none;
+    color: var(--text-clr);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 20px;
+    
+    box-sizing: border-box;
+     transition: background-color 0.3s ease;
+}
+.sidebar-admin ul li:not(:first-child) a:hover{
+    background-color: var(--hover-clr);
+}
+.sidebar-admin ul li:last-child{
+    margin-top: auto;
 }
 @media screen and (max-width:1199px){
     .blog-item-body{
@@ -1252,6 +1317,46 @@ color: red;
     }
      .team-container{
         grid-template-columns: 1fr 1fr ;
+     }
+     .admin-wrapper{
+        grid-template-columns: 1fr;
+     }
+     .admin-wrapper main{
+        padding: 2em 1em 60px 1em;
+     }
+     .sidebar-admin{
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid var(--line-clr);
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        z-index: 9999;
+        > ul{
+            padding: 0;
+            display: grid;
+            grid-auto-columns: 60px;
+            grid-auto-flow: column;
+            align-items: center;
+            justify-content: space-evenly;
+            overflow-x: auto;
+            overflow-y: clip;
+        }
+        ul li{
+            height: 100%;
+        }
+        ul a{
+            height: 60px;
+            width: 60px;
+            padding: 0;
+            border-radius: 0;
+            justify-content: center;
+        }
+        ul li span,ul li:first-child{
+            display: none;
+
+        }
      }
 }
 @media screen and (max-width:479px){

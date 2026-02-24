@@ -1,5 +1,5 @@
 url = "/admin-user"
-layout = "default"
+layout = "admin-layout"
 title = "admin-user"
 
 [session]
@@ -69,8 +69,9 @@ function onUpload(){
                 </div>
               
                     <form data-request="onUpload"  enctype="multipart/form-data" data-request-files="true" data-request-update="'site/media-list': '#media-list'">
-                    <input type="file" accept="image/*,video/*" required class="file-input" name="image">
-                <div class="white-button">
+                    <label for="image" class="file-label">Choose file</label>
+                    <input type="file" accept="image/*,video/*" required class="file-input" name="image" id="image">
+                     <div class="white-button">
                     <button type="submit" class="nav-link contact-link">
                         Upload Image
                         <span class="arrow-wrapper">

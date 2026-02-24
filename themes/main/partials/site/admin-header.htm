@@ -1,0 +1,33 @@
+    <nav id="sidebar" class="sidebar-admin">
+        <ul>
+        <li>
+            <a href="#">
+                <img src="{{ 'globals/DexinaLogo.png'| media }}" alt="">
+            </a>
+        </li>
+            <li >
+                <a href="#">
+                {% partial 'icons/admin-icon' %}
+                  <span>Admin Panel</span>
+                </a>
+            </li>
+            <li >
+                <a href="/reset-password">
+                {% partial 'icons/reset' %}
+                  <span>Reset Password</span>
+                </a>
+            </li>
+            <li >
+                <a href="#">
+                {% partial 'icons/account-box-fill' %}
+                  <span>Profile</span>
+                </a>
+            </li>
+            <li >
+                <a data-request="onLogout" data-request-data="{ redirect: '/' }" href="">
+                {% partial 'icons/sign-out-fill'%}
+                   <span>Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
