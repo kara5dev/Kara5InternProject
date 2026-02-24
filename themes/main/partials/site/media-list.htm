@@ -1,0 +1,28 @@
+ {% for file in files %}
+                <div class="blog-item">
+                     <a href="#" data-animate-parent>
+                        <div class="blog-item-thumb-wrap" data-animate>
+                            {% if file.extension in ['jpg','jpeg','png','webp'] %}
+                                <img src="{{ file.path }}" alt="{{ file.name }}">
+                            {% endif %}
+                             {% if file.extension in ['mp4','webm'] %}
+                                <video controls width="300">
+                                    <source src="{{ file.path }}">
+                                </video>
+                            {% endif %}
+                        </div>
+                        <div class="blog-item-body" data-animate>
+                            <div class="red-button download-button">
+                            <a class="nav-link contact-link" href="javascript:;" data-request="onDownload" data-request-data="file: '{{ file.raw_path }}'">
+                                Download
+                                <span class="arrow-wrapper">
+                                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                                </span>
+                            </a>
+                            </div>
+                        </div>
+                    </a>
+                  
+                </div>
+                {% endfor %}

@@ -1171,6 +1171,11 @@ color: red;
     color: white;
     text-decoration: none;
 }
+.file-input{
+   
+    padding: max(1rem,1vw);
+
+}
 @media screen and (max-width:1199px){
     .blog-item-body{
         gap: 16px;

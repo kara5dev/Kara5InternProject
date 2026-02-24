@@ -29,10 +29,16 @@ function onDownload(){
     return Storage::disk("media")->download($file);
 }
 function onUpload(){
-    $file = post('image');
+    $file = Input::file('image');
     if(!$file){
-        throw new ApplicationExcepiton('No file uploaded');
+        throw new ApplicationException('No file uploaded');
     }
+    $allowedMime = ['image/jpeg', 'image/png', 'image/webp'];
+
+    if (!in_array($file->getMimeType(), $allowedMime)) {
+        throw new ApplicationException('Invalid image type.');
+    }
+
     $path = Storage::disk("media")->putFileAs('templates', $file, $file->getClientOriginalName());
      $files = collect(Storage::disk('media')->files('templates'))
         ->map(function ($file) {
@@ -61,9 +67,10 @@ function onUpload(){
                 <div class="brand-title">
                     <h2>Our nice designs</h2>
                 </div>
-               <div class="white-button">
-                    <form data-request="onUpload"  data-request-update="'#media-list': ''" enctype="multipart/form-data">
-                    <input type="file" accept="image/*,video/*" required>
+              
+                    <form data-request="onUpload"  enctype="multipart/form-data" data-request-files="true" data-request-update="'site/media-list': '#media-list'">
+                    <input type="file" accept="image/*,video/*" required class="file-input" name="image">
+                <div class="white-button">
                     <button type="submit" class="nav-link contact-link">
                         Upload Image
                         <span class="arrow-wrapper">
@@ -76,34 +83,7 @@ function onUpload(){
         </div>
         <div class="content-section">
             <div class="blog-content" id="media-list">
-               {% for file in files %}
-                <div class="blog-item">
-                     <a href="#" data-animate-parent>
-                        <div class="blog-item-thumb-wrap" data-animate>
-                            {% if file.extension in ['jpg','jpeg','png','webp'] %}
-                                <img src="{{ file.path }}" alt="{{ file.name }}">
-                            {% endif %}
-                             {% if file.extension in ['mp4','webm'] %}
-                                <video controls width="300">
-                                    <source src="{{ file.path }}">
-                                </video>
-                            {% endif %}
-                        </div>
-                        <div class="blog-item-body" data-animate>
-                            <div class="red-button download-button">
-                            <a class="nav-link contact-link" href="javascript:;" data-request="onDownload" data-request-data="file: '{{ file.raw_path }}'">
-                                Download
-                                <span class="arrow-wrapper">
-                                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
-                                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
-                                </span>
-                            </a>
-                            </div>
-                        </div>
-                    </a>
-                  
-                </div>
-                {% endfor %}
+              {% partial 'site/media-list' %}
             </div>
         </div>
     </div>
