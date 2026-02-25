@@ -1,0 +1,32 @@
+url = "/profile"
+layout = "default"
+title = "profile"
+
+[session]
+security = "user"
+redirect = "login"
+checkToken = 0
+
+[account]
+==
+<div class="login-section section-padding--y">
+<div class="container">
+    <div class="form-wrapper">
+        <div class="section-heading ">
+           <div class="hero-subtitle">
+             <div class="hero-subtitle-icon">
+                {% partial 'icons/user' %}
+             </div>
+                <div class="hero-subtitle-text">UPDATE</div>
+            </div>
+            <div class="brand-title">
+                <h2>UPDATE PROFILE</h2>
+            </div>
+        </div>
+        <div class="contact-us-form">
+           {% component 'account' %}
+        </div>
+    </div>
+</div>
+</div>
+

@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.custom-item-icon').forEach(iconWrapper => {
         iconWrapper.addEventListener("click", () => {
@@ -62,5 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }}
        )
     })
+   
 });
 

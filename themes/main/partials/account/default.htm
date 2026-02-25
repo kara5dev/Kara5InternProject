@@ -1,0 +1,60 @@
+{% if __SELF__.user %}
+    <form
+    method="post"
+    class="account-editor"
+    data-request="onUpdateProfile"
+    data-request-flash data-request-validate
+    data-request-success=" window.location.href='{{ 'home'|page }}';">
+
+    <div class="contact-us-select-wrap ">
+  
+         <div class="contact-us-input-wrap register-input-wrap">
+            <label for="first_name" class="contact-us-label">First Name </label>
+            <input type="text" class="contact-us-input" id="first_name" placeholder="Enter your name" maxlength="256"
+                name="first_name" value="{{user.first_name}}">
+            <p class="error-message" data-validate-for="first_name"></p>
+        </div>
+         <div class="contact-us-input-wrap register-input-wrap">
+            <label for="last_name" class="contact-us-label">Last Name</label>
+            <input type="text" class="contact-us-input" id="last_name" placeholder="Enter your last name" maxlength="256"
+                name="last_name" value="{{user.last_name}}" >
+                <p class="error-message" data-validate-for="last_name"></p>
+          </div>
+        <div class="contact-us-input-wrap register-input-wrap">
+            <label for="username" class="contact-us-label">Username</label>
+            <input type="text" class="contact-us-input" id="username" placeholder="Enter your username" maxlength="256"
+                name="username" value="{{user.username}}">
+                <p class="error-message" data-validate-for="username"></p>
+        </div>
+    </div>
+    <div class="red-button contact-submit-btn">
+        <button class="nav-link" type="submit">
+            Update Now
+            <span class="arrow-wrapper">
+                <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+            </span> 
+
+        </button>
+    </div>
+</form>
+{% else %}
+<div class="account-component">
+        <div class="check-icon">
+            <i class="ri-checkbox-circle-fill check-circle"></i>
+        </div>
+        <div class="account-content">
+            <h3>Your email address has been verified successfully</h3>
+            <div class="red-button sign-in-btn">
+                <a class="nav-link" href="{{ 'login'|page }}">
+                     Sign Now
+                <span class="arrow-wrapper">
+                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
+                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
+                </span> 
+                </a>
+                
+            </div>
+        </div>
+</div>
+{% endif %}
