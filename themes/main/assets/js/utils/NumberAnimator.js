@@ -45,7 +45,7 @@ export default class Counter {
                 suffix = `M${suffix}`
                  target = target/1000000;
             }
-            if(target>=1000){
+            else if(target>=1000){
                 suffix =  `K${suffix}`;
                 target = target/1000;
             }
@@ -56,7 +56,7 @@ export default class Counter {
                 duration: 1.6,
                 ease: "power3.out",
                 onUpdate: () => {
-                    el.textContent = Math.floor(obj.value) + suffix;
+                    el.textContent =obj.value.toFixed(1) + suffix;
                 }
             });
         });
