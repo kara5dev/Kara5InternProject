@@ -1,5 +1,6 @@
 
 
+
 import Counter from "./utils/NumberAnimator.js";
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.custom-item-icon').forEach(iconWrapper => {
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }}
        )
     })
+    
     Counter.initAll();
    
 });
