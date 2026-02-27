@@ -36,11 +36,21 @@ export default class Counter {
 
     animate() {
         this.numbers.forEach(el => {
-            const target = parseInt(el.dataset.target, 10);
-            const suffix = el.dataset.suffix;
+            let target = parseInt(el.dataset.target, 10);
+            let suffix = el.dataset.suffix;
 
             const obj = { value: 0 };
-
+            
+            if(target>=1000000){
+                suffix = `M${suffix}`
+                 target = target/1000000;
+            }
+            if(target>=1000){
+                suffix =  `K${suffix}`;
+                target = target/1000;
+            }
+           
+            
             gsap.to(obj, {
                 value: target,
                 duration: 1.6,
