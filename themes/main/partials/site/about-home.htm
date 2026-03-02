@@ -7,19 +7,19 @@
                             <div class="hero-subtitle-icon">
                                 {% partial 'icons/user' %}
                             </div>
-                        <div class="hero-subtitle-text"> ABOUT US</div>
+                        <div class="hero-subtitle-text"> {{page.s2_subtitle}}</div>
                     </div>
                 </div>
                <div class="about-title" data-animate-parent>
-                  <h1 class="about-title-text" data-animate>05</h1>
+                  <h1 class="about-title-text" data-animate>{{page.s2_title}}</h1>
                </div>
                <div class="about-text" data-animate-parent>
-                   <p class="about-text-home" data-animate>Years in advertising industry</p>
+                   <p class="about-text-home" data-animate>{{page.s2_left_text}}</p>
                </div>
             </div>
             <div class="about-content" data-animate-parent-stagger>
-                <p data-animate-stagger>Our group of innovative experts is committed to assisting companies in thriving in the cutthroat industry of today. Using our knowledge of design and marketing tactics, we want to develop memorable campaigns that raise brand awareness and provide tangible outcomes.</p>
-                <p data-animate-stagger>Every meaningful connection begins with great design — and we’re here to help you make that first impression count.</p>
+                <p data-animate-stagger>{{page.s2_right_content|raw}}</p>
+                {# <p data-animate-stagger>Every meaningful connection begins with great design — and we’re here to help you make that first impression count.</p> #}
             </div>
         </div>
     </div>

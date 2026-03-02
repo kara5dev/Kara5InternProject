@@ -1,0 +1,68 @@
+uuid: 3c04d7db-ad84-4e87-b88e-75cc12050974
+handle: Page\Home
+type: single
+name: Home
+
+primaryNavigation:
+    label: Page Content
+    icon: icon-text-left
+    order: 200
+
+navigation: 
+    label: Home Page
+    order: 10
+
+extraNavigation:
+    _mainpages_section:
+        itemType: section 
+        label: Main Pages
+        order: 9
+    _mainpages_ruler:
+        itemType: ruler 
+        order: 8
+
+fields:
+    _s1: 
+        label: Section 1 
+        type: section
+    s1_title:
+        label: Title
+        type: text
+    s1_subtitle:
+        label: Subtitle
+        type: text
+    s1_idea:
+        label: Idea
+        type: text
+        span: auto
+    s1_right_content:
+        label: Right Content
+        type: text
+        span: auto
+    s1_right_first_button:
+        label: Right First Button
+        type: text
+        span: auto
+    s1_right_second_button:
+        label: Right Second Button
+        type: text
+        span: auto
+    s1_banner_image:
+        label: Banner image
+        mode: image
+        type: mediafinder
+    _s2:
+        label: Section 2
+        type: section
+    s2_title:
+        label: Title 2
+        type: text
+    s2_subtitle:
+        label: Subtitle 2
+        type: text
+    s2_left_text:
+        label: Left text
+        type: text
+    s2_right_content:
+        label: Right content
+        type: richeditor
