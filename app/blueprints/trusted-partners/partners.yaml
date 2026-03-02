@@ -1,0 +1,18 @@
+uuid: 64595509-2b17-4f32-8a9c-6224c1c4d57b
+handle: Page\Partners
+type: entry
+name: Partners
+drafts: false
+
+
+
+navigation:
+    parent: Page\Home
+    icon: icon-text-file
+    order: 10
+
+fields:
+    description:
+        label: Entry description
+        type: textarea
+        size: small
