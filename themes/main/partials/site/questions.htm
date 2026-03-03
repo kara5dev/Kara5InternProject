@@ -6,23 +6,24 @@
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/question' %}
                     </div>
-                    <div class="hero-subtitle-text">FAQ</div>
+                    <div class="hero-subtitle-text">{{ page.s8_subtitle}}</div>
                 </div>
                 <div class="brand-title questions">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>{{page.s8_title}}</h2>
                 </div>
             </div>
         </div>
         <div class="question-wrapper" >
+        {% for question in page.s8_accordion %}
             <div data-animate-parent>
             <div class="question-item" data-animate>
                 <div class="question-item-heading">
                 <div class="question-item-heading-left">
                     <div class="question-order-number">
-                        <p>/01</p>
+                        <p>/0{{loop.index}}</p>
                     </div>
                     <div class="question-item-header">
-                        <h2>How do I contact you for inquiries or collaborations?</h2>
+                        <h2>{{question.question_title}}</h2>
                     </div>
                 </div>
                     <div class="custom-item-icon">
@@ -32,108 +33,14 @@
                 <div class="question-item-content">
                     <div class="question-item-content-left">
                         <div class="question-content">
-                            <p>Best the average blind and that accordingly pointing, out the to bold, good my believed the rattling experiments friends couldn't scolded unable to many line may their times, propitiously is themselves, was discipline the be the seen escape.</p>
+                            {{ question.question_description }}
                         </div>
                     </div>
                 </div>
             </div>
             </div>
-            <div data-animate-parent>
-            <div class="question-item" data-animate>
-                <div class="question-item-heading">
-                <div class="question-item-heading-left">
-                    <div class="question-order-number">
-                        <p>/02</p>
-                    </div>
-                    <div class="question-item-header">
-                        <h2>What services does your digital agency offer?</h2>
-                    </div>
-                </div>
-                    <div class="custom-item-icon">
-                        {% partial 'icons/closed-eye' %}
-                    </div>
-                </div>
-                <div class="question-item-content">
-                    <div class="question-item-content-left">
-                        <div class="question-content">
-                            <p>Best the average blind and that accordingly pointing, out the to bold, good my believed the rattling experiments friends couldn't scolded unable to many line may their times, propitiously is themselves, was discipline the be the seen escape.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div data-animate-parent>
-            <div class="question-item" data-animate>
-                <div class="question-item-heading">
-                <div class="question-item-heading-left">
-                    <div class="question-order-number">
-                        <p>/03</p>
-                    </div>
-                    <div class="question-item-header">
-                        <h2>How long does it take to build a website?</h2>
-                    </div>
-                </div>
-                    <div class="custom-item-icon">
-                        {% partial 'icons/closed-eye' %}
-                    </div>
-                </div>
-                <div class="question-item-content">
-                    <div class="question-item-content-left">
-                        <div class="question-content">
-                            <p>Best the average blind and that accordingly pointing, out the to bold, good my believed the rattling experiments friends couldn't scolded unable to many line may their times, propitiously is themselves, was discipline the be the seen escape.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div data-animate-parent>
-            <div class="question-item" data-animate>
-                <div class="question-item-heading">
-                <div class="question-item-heading-left">
-                    <div class="question-order-number">
-                        <p>/04</p>
-                    </div>
-                    <div class="question-item-header">
-                        <h2>What is included in your digital marketing services?</h2>
-                    </div>
-                </div>
-                    <div class="custom-item-icon">
-                        {% partial 'icons/closed-eye' %}
-                    </div>
-                </div>
-                <div class="question-item-content">
-                    <div class="question-item-content-left">
-                        <div class="question-content">
-                            <p>Best the average blind and that accordingly pointing, out the to bold, good my believed the rattling experiments friends couldn't scolded unable to many line may their times, propitiously is themselves, was discipline the be the seen escape.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div data-animate-parent>
-            <div class="question-item" data-animate>
-                <div class="question-item-heading">
-                <div class="question-item-heading-left">
-                    <div class="question-order-number">
-                        <p>/05</p>
-                    </div>
-                    <div class="question-item-header">
-                        <h2>Can you create content for our social media accounts?</h2>
-                    </div>
-                </div>
-                    <div class="custom-item-icon">
-                        {% partial 'icons/closed-eye' %}
-                    </div>
-                </div>
-                <div class="question-item-content">
-                    <div class="question-item-content-left">
-                        <div class="question-content">
-                            <p>Best the average blind and that accordingly pointing, out the to bold, good my believed the rattling experiments friends couldn't scolded unable to many line may their times, propitiously is themselves, was discipline the be the seen escape.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+        {% endfor %}
+           
         </div>
     </div>
 </div>

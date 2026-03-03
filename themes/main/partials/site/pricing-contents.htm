@@ -1,21 +1,25 @@
  <div class="row row-cols-1
             row-cols-md-2
             row-cols-xl-3  g-4 pricing-content" data-animate-parent>
+            {% for plans in page.s7_pricing %}
             <div class="col" data-animate> 
                 <div class="pricing-item">
                 <div class="pricing-item-top">
                     <div class=" pricing-item-header">
-                        <h2>Starter</h2> 
+                        <h2>{{ plans.price_title}}</h2>
+                        {% if plans.is_professional %} 
+                        <span class="popular">Popular</span>
+                        {% endif %}
                     </div>
                     <div class="pricing-paragraph">
-                        <p>At our agency, we understand the importance of effective design in capturing the attention.</p>
+                        {{plans.description}}
                     </div>
                      <div class="fs-md-4 price-content">
-                        <h2>$ 45.00 USD/<span class="price-content-span">mo</span></h2>
+                        <h2>$ {{plans.price |number_format(2, '.', '')}} USD/<span class="price-content-span">mo</span></h2>
                     </div>
                     <div class="white-button m-0">
                             <a class="nav-link contact-link text-center" href="#">
-                                Get Started
+                                {{page.s7_button}}
                                 <span class="arrow-wrapper">
                                     <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
                                     <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
@@ -25,80 +29,11 @@
                 </div>
                     <div class="pricing-item-border"></div>
                     <div class="price-content-items">
-                         <ul class="included-content">
-                            <li class="included-item">Custom website design</li>
-                            <li class="included-item">Mobile-responsive development</li>
-                            <li class="included-item">1-month free maintenance</li>
-                            <li class="included-item">Social media integration</li>
-                         </ul>
+                         
+                         {{ plans.list_content|raw}}
                     </div>
                 </div>
             </div>
-            <div class="col" data-animate> 
-                <div class="pricing-item">
-                    <div class="pricing-item-top">
-                    <div class="pricing-item-header">
-                        <h2>Professional </h2> 
-                        <span class="popular">Popular</span>
-                    </div>
-                    <div class="pricing-paragraph ">
-                        <p>Perfect for teams or businesses just getting, the Starter plan provides features.</p>
-                    </div>
-                    <div class="price-content">
-                        <h2>$ 65.00 USD/<span class="price-content-span">mo</span></h2>
-                    </div>
-                    <div class="white-button m-0">
-                            <a class="nav-link contact-link text-center" href="#">
-                                Get Started
-                                <span class="arrow-wrapper">
-                                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
-                                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
-                                </span>
-                            </a>
-                    </div>
-                    </div>
-                     <div class="pricing-item-border"></div>
-                    <div class="price-content-items">
-                         <ul class="included-content">
-                            <li class="included-item">Custom website design</li>
-                            <li class="included-item">Mobile-responsive development</li>
-                            <li class="included-item">1-month free maintenance</li>
-                            <li class="included-item">Social media integration</li>
-                         </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col" data-animate>
-                <div class="pricing-item">
-                <div class="pricing-item-top">
-                    <div class="pricing-item-header">
-                        <h2>Full Package</h2> 
-                    </div>
-                    <div class="pricing-paragraph">
-                        <p>For businesses with unique needs, our plan custom solutions, dedicated support.</p>
-                    </div>
-                    <div class="price-content">
-                        <h2>$ 85.00 USD/<span class="price-content-span">mo</span></h2> 
-                    </div>
-                    <div class="white-button m-0">
-                            <a class="nav-link contact-link text-center" href="#">
-                                Get Started
-                                <span class="arrow-wrapper">
-                                    <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
-                                    <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
-                                </span>
-                            </a>
-                    </div>
-                </div>
-                    <div class="pricing-item-border"></div>
-                    <div class="price-content-items">
-                         <ul class="included-content">
-                            <li class="included-item">Custom website design</li>
-                            <li class="included-item">Mobile-responsive development</li>
-                            <li class="included-item">1-month free maintenance</li>
-                            <li class="included-item">Social media integration</li>
-                         </ul>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+           
         </div>

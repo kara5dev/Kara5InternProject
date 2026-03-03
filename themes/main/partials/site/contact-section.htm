@@ -1,3 +1,6 @@
+[section page]
+handle = "Page\ContactFooter"
+==
 <div class="bg-light text-center cta-section section-padding--y">
     <div class="container">
     <div class="contact-section-wrapper" >
@@ -7,17 +10,17 @@
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/mail-icon' %}
                     </div>
-                    <div class="hero-subtitle-text">CONTACT</div>
+                    <div class="hero-subtitle-text">{{page.contact_subtitle}}</div>
             </div>
                 <div class="brand-title contact">
-                    <h2>Have any project idea in your mind?</h2>
+                    <h2>{{page.contact_title}}</h2>
                 </div>
         </div>
     </div>
     <div data-animate-parent>
         <div class="red-button contact" data-animate>
             <a class="nav-link contact-link text-center" href="#">
-                Contact Now
+                {{page.btn_text}}
                 <span class="arrow-wrapper">
                     <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
                     <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>

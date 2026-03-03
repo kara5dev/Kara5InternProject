@@ -4,16 +4,19 @@ type: entry
 name: Project
 drafts: false
 
-primaryNavigation:
-    label: Project
-    icon: octo-icon-file
-    order: 110
 
 navigation:
-    parent: Projects\Project
+    parent: Page\Home
     icon: icon-magic
-    order: 10
-
+    order: 89
+extraNavigation:
+    _projects_section:
+        itemType: section
+        label: Projects
+        order: 88
+    _projects_ruler:
+        itemType: ruler
+        order: 87
 fields:
     content:
         tab: Edit
@@ -38,3 +41,12 @@ fields:
         commentAbove: "Please select the categories that the project belongs to"
         type: entries
         source: Projects\Category
+ 
+    layoutType:
+        tab: Manage
+        label: Layout type
+        type: dropdown
+        options: 
+           1: Layout 1 (2 Projects)
+           2: Layout 2 (3 Projects)
+           3: Layout 3 (2 Projects)

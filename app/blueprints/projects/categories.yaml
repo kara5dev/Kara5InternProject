@@ -9,8 +9,8 @@ structure:
 
 navigation:
     icon: icon-tree
-    parent: Projects\Project
-    order: 10
+    parent: Page\Home
+    order: 89
 
 fields:
     title:

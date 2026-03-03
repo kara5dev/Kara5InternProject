@@ -1,0 +1,39 @@
+uuid: 8598cd09-06b6-4d2f-aa8d-6b0e203b7430
+handle: Page\Pricing
+type: entry
+name: Pricing
+drafts: false
+
+
+navigation:
+    parent: Page\Home
+    order: 96
+extraNavigation:
+    _pricing_section:
+        itemType: section
+        label: Pricing
+        order: 95
+    _pricing_ruler:
+        itemType: ruler
+        order: 94
+fields:
+    price:
+        label: Price in $
+        type: number
+        validation: numeric
+        span: auto
+        step: 10
+    price_title:
+        label: Price title
+        type: text
+        span: auto
+    description:
+        label: Price description
+        type: textarea
+    is_professional:
+        label: Is it popular pricing plan
+        type: checkbox
+        default: true
+    list_content:
+        label: List Services
+        type: richeditor

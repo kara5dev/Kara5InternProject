@@ -106,3 +106,74 @@ fields:
                     mode: image
                     type: fileupload
                     span: auto
+    _s5:
+        label: Section 5
+        type: section
+    s5_title:
+        label: Title
+        type: text
+        span: auto
+    s5_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s5_projects:
+        label: Projects
+        type: entries
+        source: Projects\Project
+    _s6: 
+        label: Sction 6
+        type: section
+    s6_title:
+        label: Title
+        type: text
+        span: auto
+    s6_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s6_clients:
+        label: Clients
+        type: entries
+        source: Page\Testimonials
+    _s7:
+        label: Section 7
+        type: section
+    s7_title:
+        label: Title
+        type: text
+        span: auto
+    s7_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s7_pricing:
+        label: Pricing Plans
+        source: Page\Pricing
+        type: entries
+    s7_button:
+        label: Pricing Button
+        type: text
+    _s8: 
+        label: Section 8
+        type: section
+    s8_title:
+        label: Title
+        type: text
+        span: auto
+    s8_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s8_accordion:
+        label: Accordion
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                question_title:
+                    label: Asked Question
+                    type: text
+                question_description:
+                    label: Description
+                    type: textarea

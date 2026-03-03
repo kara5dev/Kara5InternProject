@@ -1,0 +1,29 @@
+uuid: e1ecacd0-888d-47a6-869a-c4d9931707e2
+handle: Page\ContactFooter
+type: single
+name: ContactFooter
+drafts: true
+
+navigation: 
+    parent: Page\Home
+    order: 100
+
+extraNavigation:
+    _contacts_footer_section:
+        itemType: section
+        label: Contact-Footer
+        order: 99
+    _partners_footer_ruler:
+        itemType: ruler
+        order: 98
+
+fields:
+    btn_text:
+        label: Button text
+        type: text
+    contact_title:
+        label: Contact Title
+        type: text
+    contact_subtitle:
+        label: Contact Subtitle
+        type: text

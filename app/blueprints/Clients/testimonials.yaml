@@ -1,0 +1,33 @@
+uuid: 89c59d9c-088d-4b0b-a170-29686f887011
+handle: Page\Testimonials
+type: entry
+name: Testimonials
+drafts: false
+
+navigation:
+    parent: Page\Home
+    order: 85
+
+extraNavigation:
+    _testimonial_section:
+        itemType: section
+        label: Testimonials
+        order: 84
+    _testimonial_ruler:
+        itemType: ruler
+        order: 83
+
+fields:
+      clients_name:
+          label: Client name
+          type: text
+      clients_designation:
+          label: Designation
+          type: text
+      clients_image:
+          label: Avatar
+          type: fileupload
+          mode: image
+      clients_review:
+          label: Review
+          type: richeditor
