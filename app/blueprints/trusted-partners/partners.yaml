@@ -4,15 +4,23 @@ type: entry
 name: Partners
 drafts: false
 
-
-
 navigation:
     parent: Page\Home
-    icon: icon-text-file
-    order: 10
+    order: 92
+
+extraNavigation:
+    _partners_section:
+        itemType: section
+        label: Partners
+        order: 91
+    _partners_ruler:
+        itemType: ruler
+        order: 90
 
 fields:
-    description:
-        label: Entry description
-        type: textarea
-        size: small
+    logo_image:
+        mode: image
+        type: fileupload
+        label: Logo Image
+        imageWidth: 200
+        imageHeight: 200

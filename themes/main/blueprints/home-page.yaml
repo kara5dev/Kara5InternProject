@@ -55,10 +55,10 @@ fields:
         label: Section 2
         type: section
     s2_title:
-        label: Title 2
+        label: Title 
         type: text
     s2_subtitle:
-        label: Subtitle 2
+        label: Subtitle 
         type: text
     s2_left_text:
         label: Left text
@@ -66,3 +66,43 @@ fields:
     s2_right_content:
         label: Right content
         type: richeditor
+    _s3:
+        label: Section 3
+        type: section
+    s3_title:
+        label: Title
+        type: text
+    s3_subtitle:
+        label: Subtitle
+        type: text
+    s3_partners:
+        label: Partners
+        mode: image
+        type: fileupload
+    _s4:
+        label: Section 4
+        type: section
+    s4_title:
+        label: Title
+        type: text
+    s4_subtitle:
+        label: Subtitle
+        type: text
+    s4_accordion: 
+        label: Accordion
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                service_title: 
+                    label: Service Title
+                    type: text
+                service_content:
+                    label: Content
+                    type: richeditor
+                    span: auto
+                service_image:
+                    label: Content Image
+                    mode: image
+                    type: fileupload
+                    span: auto

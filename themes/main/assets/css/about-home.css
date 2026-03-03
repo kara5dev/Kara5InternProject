@@ -604,8 +604,8 @@ color: red;
      gap: 1rem;
 }
 .trusted-partner-item{
-    flex: 0 0 15rem;
-    padding: 10px 30px; 
+    flex: 0 0 17rem;
+    padding: 15px 50px; 
     border: 1px solid #E5E5E5;
     display: flex;
     align-items: center;
@@ -614,13 +614,14 @@ color: red;
 .trusted-partner-item img{
   height: 100px;
   width: auto;
+  object-fit: contain;
 }
 @keyframes marquee{
       from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%);
+        transform:  translateX(calc(-50% - 0.5rem));
     }
 }
 .swiper 
