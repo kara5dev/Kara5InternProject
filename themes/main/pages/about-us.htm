@@ -1,8 +1,10 @@
-title = "about-us"
-layout = "default"
 url = "/about-us"
-==
+layout = "default"
+title = "about-us"
 
+[section page]
+handle = "Page\AboutUs"
+==
 <div class="about-us-section section-padding--y">
     <div class="container">
         <div class="section-heading-blog section-padding--b-2" data-animate-parent>
@@ -10,29 +12,29 @@ url = "/about-us"
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/earth' %}
                     </div>
-                    <div class="hero-subtitle-text">ABOUT DEXINA</div>
+                    <div class="hero-subtitle-text">{{page.s1_subtitle}}</div>
                 </div>
                 <div class="brand-title" data-animate>
-                    <h2>Designing impact, one pixel at a time</h2>
+                    <h2>{{page.s1_title}}</h2>
                 </div>
         </div>
         <div class="about-us-img" data-animate-parent>
-            <img  data-animate src="https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681a2dffbb5c697c2acb4b1b_banner-2-p-2000.webp" alt="About-us-img">
+            <img  data-animate src="{{page.s1_banner[0].path}}" alt="About-us-img">
         </div>
         <div class="experience-block" data-animate-parent>
             <div class="experience-description" data-animate>
-                <p>Adnuo victoria corrumpo universe depono ventosus commemoro derelinquo. Tamen quis modi aestus cauda culpo custodia talis adulatio.</p>
+                <p>{{page.s1_description}}</p>
             </div>
             <div class="experience-projects" data-animate>
-                <h4 class="number">2502350+</h4>
+                <h4 class="number">{{page.s1_projects}}+</h4>
                 <p>Projects Completed</p>
             </div>
             <div class="experience-projects" data-animate>
-                <h4 class="number">10+</h4>
+                <h4 class="number">{{page.s1_years}}+</h4>
                 <p>Years of Experience</p>
             </div>
             <div class="experience-projects" data-animate>
-                <h4 class="number">95%</h4>
+                <h4 class="number">{{page.s1_client}}%</h4>
                 <p>Client Satisfaction</p>
             </div>
         </div>
@@ -42,213 +44,95 @@ url = "/about-us"
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/present' %}
                     </div>
-                    <div class="hero-subtitle-text">OUR VALUES</div>
+                    <div class="hero-subtitle-text">{{page.s2_subtitle}}</div>
                 </div>
                 <div class="brand-title" data-animate>
-                    <h2>Driven by Purpose</h2>
+                    <h2>{{page.s2_title}}</h2>
                 </div>
             </div>
             <div class="value-container">
             <div class="values-blocks" >
+            {% for value in page.s2_values %}
             <div data-animate-parent>
                 <div class="value-block" data-animate>
                    <div class="icon-content">
-                    {% partial 'icons/bubbles' %}
+                    <i class="{{value.value_icon}}"></i>
                     </div>
                     <div class="value-content">
-                        <h2>Client-Centric Approach</h2>
-                        <p>Comprehendo decumbo tabula. Conservo arca adinventitias iure tonsor european. Depraedor usitas et creo comptus cena ascit. Culpo celebrer velit auditor adamo. Apostolus sunt tergum volo tabesco apparatus.</p>
+                        <h2>{{value.value_title}}</h2>
+                        <p>{{value.value_description}}</p>
                     </div>
                 </div>
             </div>
-            <div data-animate-parent>
-                 <div class="value-block" data-animate>
-                   <div class="icon-content">
-                    {% partial 'icons/computer' %}
-                    </div>
-                    <div class="value-content">
-                        <h2>Innovative Design & Development</h2>
-                        <p>Cogito quaerat explicabo termes astrum arbitro artificiose tricesimus tenax. Deputo sopor aequitas articulus video. Cumque ars arx architecto canto decimus acsi corrupti. Voluptate neque demoror audacia magnam.</p>
-                    </div>
-                </div>
-            </div>
-            <div data-animate-parent>
-                 <div class="value-block" data-animate>
-                   <div class="icon-content">
-                    {% partial 'icons/database' %}
-                    </div>
-                    <div class="value-content">
-                        <h2>Data-Driven Strategies</h2>
-                        <p>Minus vomer pax statim aggero eligendi veritatis. Spiritus cunctatio avaritia verto conculco apparatus cohaero utpote corona. Qui crur taceo calco cerno derideo. Aliquam in valeo venio consequatur sub cinis cornu.</p>
-                    </div>
-                </div>
-            </div>
-            <div data-animate-parent>
-                <div class="value-block" data-animate>
-                   <div class="icon-content">
-                    {% partial 'icons/headphones' %}
-                    </div>
-                    <div class="value-content">
-                        <h2>Transparent Communication</h2>
-                        <p>Ratione rem iusto coadunatio tam stabilis bis. Amplus sortitus aspernatur amplus surculus subvenio bene dedico amet taceo. Temeritas audio utilis vilis decet porro odit cimentarius talus cuius.</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            
             </div>
             </div>
         </div>
         {% partial 'site/trusted-brands'  %}
         <div class="ideas-container section-padding--y">
+           
             <div class="section-heading ideas-heading" data-animate-parent>
                 <div class="hero-subtitle" data-animate>
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/brain' %}
                     </div>
-                    <div class="hero-subtitle-text">OUR APPROACH</div>
+                    <div class="hero-subtitle-text">{{page.s4_subtitle}}</div>
                 </div>
                 <div class="brand-title ideas-heading" data-animate>
-                    <h2>How We Bring Ideas to Life</h2>
+                    <h2>{{page.s4_title}}</h2>
                 </div>
             </div>
+           
             <div class="ideas-content" data-animate-parent>
+                 {% for idea in page.s4_ideas %}
                 <div  class="ideas-item" data-animate>
                 <div>
                     <div class="ideas-top" >
                         <div class="ideas-header">
-                            <h4>Discovery & Strategy</h4>
+                            <h4>{{idea.s4_ideas_title}}</h4>
                         </div>
                         <div class="ideas-index">
-                            <p>01</p>
+                            <p>0{{loop.index}}</p>
                         </div>
                     </div>
                     <div class="ideas-bottom">
-                        <p>Demo atque tertius. Dolor facilis curtus adopto adimpleo. Tribuo conforto cubicularis adstringo spero advenio solutio clamo beneficium ubi.Absens ultio cruciamentum ter commemoro commemoro volo oncido aiunt.</p>
+                        <p>{{idea.s4_ideas_description}}</p>
                     </div>
                 </div>
                 </div>
-                <div class="ideas-item" data-animate>
-                <div>
-                    <div class="ideas-top" >
-                        <div class="ideas-header">
-                            <h4>Planning & Ideation</h4>
-                        </div>
-                        <div class="ideas-index">
-                            <p>02</p>
-                        </div>
-                    </div>
-                    <div class="ideas-bottom">
-                        <p>Cumque quas candidus adaugeo. Tunc deduco sonitus. Fugiat aspicio bene demoror studio.Capillus ascit texo credo alias ascit accedo. Cunabula aestivus umquam alius sperno statim tardus cribro. Aurum alienus valeo tenus.</p>
-                    </div>
-                </div>
-                </div>
-                <div class="ideas-item" data-animate>
-                <div>
-                    <div class="ideas-top" >
-                        <div class="ideas-header">
-                            <h4>Design & Development</h4>
-                        </div>
-                        <div class="ideas-index">
-                            <p>03</p>
-                        </div>
-                    </div>
-                    <div class="ideas-bottom">
-                        <p>Succurro abstergo audacia combibo possimus suppellex deorsum ocer thymum cui. Ustilo clarus constans textor cauda arceo amplexus textus usitas. Bis soleo supellex assumenda. Iste vulgivag confero cupiditate sulum.</p>
-                    </div>
-                </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="awards-container">
-            <div class="section-heading ideas-heading" data-animatet>
+            <div class="section-heading ideas-heading" data-animate-parent >
                 <div class="hero-subtitle" data-animate>
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/medal' %}
                     </div>
-                    <div class="hero-subtitle-text">AWARDS & RECOGNITIONS</div>
+                    <div class="hero-subtitle-text">{{page.s5_subtitle}}</div>
                 </div>
                 <div class="brand-title ideas-heading" data-animate>
-                    <h2>Recognition That Fuels Us</h2>
+                    <h2>{{page.s5_title}}</h2>
                 </div>
             </div>
             <div class="award-content">
+            {% for recognition in page.s5_recognitions %}
             <div data-animate-parent>
                 <div class="award-item" data-animate>
                     <div class="award-year">
-                        <p>2025</p>
+                        <p>{{recognition.recognition_year}}</p>
                     </div>
                     <div class="award-header">
-                        <h2>10x Featured Project</h2>
+                        <h2>{{recognition.recognition_award}}</h2>
                     </div>
                     <div class="award-description">
-                        <p>Behance</p>
+                        <p>{{recognition.recognition_community}}</p>
                     </div>
                 </div>
             </div>
-            <div data-animate-parent>
-                <div class="award-item" data-animate>
-                    <div class="award-year">
-                        <p>2024</p>
-                    </div>
-                    <div class="award-header">
-                        <h2>Creator of the Year</h2>
-                    </div>
-                    <div class="award-description">
-                        <p>Creative Awards</p>
-                    </div>
-                </div>
-            </div>
-            <div data-animate-parent>
-                <div class="award-item" data-animate>
-                    <div class="award-year">
-                        <p>2023</p>
-                    </div>
-                    <div class="award-header">
-                        <h2>7x Best Website Award</h2>
-                    </div>
-                    <div class="award-description">
-                        <p>CSSDA</p>
-                    </div>
-                </div>
-            </div>
-            <div data-animate-parent>
-                <div class="award-item" data-animate>
-                    <div class="award-year">
-                        <p>2022</p>
-                    </div>
-                    <div class="award-header">
-                        <h2>2025 Rising Star</h2>
-                    </div>
-                    <div class="award-description">
-                        <p>Webflow Community</p>
-                    </div>
-                </div>
-            </div>
-            <div data-animate-parent>
-                <div class="award-item" data-animate>
-                   <div class="award-year">
-                        <p>2021</p>
-                   </div>
-                    <div class="award-header">
-                        <h2>Excellence in UX Design</h2>
-                    </div>
-                    <div class="award-description">
-                        <p>Design Leaders Summit</p>
-                    </div>
-                </div>
-            </div>
-            <div data-animate-parent>
-                <div class="award-item" data-animate>
-                    <div class="award-year">
-                        <p>2020</p>
-                    </div>
-                    <div class="award-header">
-                        <h2>Innovation in Digital Design</h2>
-                    </div>
-                    <div class="award-description">
-                        <p>FWA</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            
             </div>
         </div>
         <div class="dexina-team section-padding--y">
@@ -257,88 +141,46 @@ url = "/about-us"
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/teams' %}
                     </div>
-                    <div class="hero-subtitle-text">TEAM MEMBERS</div>
+                    <div class="hero-subtitle-text">{{page.s6_subtitle}}</div>
                 </div>
                 <div class="brand-title ideas-heading" data-animate>
-                    <h2>People Who Make It Happen</h2>
+                    <h2>{{page.s6_title}}</h2>
                 </div>
             </div>
             <div class="team-container">
-            <div data-animate-parent>
-                <div class="team-item"  data-animate>
-                    <div class="team-img">
-                        <img src="https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681dfb8b12a5f0a01ea2804f_thumb-9.webp" alt="TeammateImage">
-                    </div>
-                   
-                        <div class="team-name-media">
-                           <div class="team-name">
-                            <h2>Hattie Nikolaus</h2>
-                             <p>Founder & Head of Design</p>
-                           </div> 
-                           <div class="team-social-media">
-                                <div class="social-icon">
-                                    {% partial 'icons/facebook'%}
-                                </div>
-                                <div class="social-icon">
-                                    {% partial 'icons/instagram'%}
-                                </div>
-                                <div class="social-icon">
-                                    {% partial 'icons/linkedin'%}
-                                </div>
-                           </div>
-                        </div>
-                   
-                </div>
-            </div>
+            {% for team in page.s6_team %}
             <div data-animate-parent>
                 <div class="team-item" data-animate>
                     <div class="team-img">
-                        <img src="https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681dfb8daf5fcf36eff72993_thumb-10.webp" alt="TeammateImage">
+                        <img src="{{team.team_image[0].path}}" alt="TeammateImage">
                     </div>
 
                         <div class="team-name-media">
                            <div class="team-name">
-                            <h2>Kristi Stark</h2>
-                             <p>Project Manager</p>
+                            <h2>{{team.team_name}}</h2>
+                             <p>{{team.team_designation}}</p>
                            </div> 
                            <div class="team-social-media">
                                 <div class="social-icon">
+                                    <a href="{{team.facebook_url}}">
                                     {% partial 'icons/facebook'%}
+                                    </a>
                                 </div>
                                 <div class="social-icon">
+                                    <a href="{{team.instagram_url}}">
                                     {% partial 'icons/instagram'%}
+                                    </a>
                                 </div>
                                 <div class="social-icon">
+                                    <a href="{{team.linkeldin_url}}">
                                     {% partial 'icons/linkedin'%}
+                                    </a>
                                 </div>
                            </div>
                          </div>
                 </div>
             </div>
-            <div data-animate-parent>
-                <div class="team-item" data-animate>
-                    <div class="team-img">
-                        <img src="https://cdn.prod.website-files.com/680ce7acfc716f3fc095e18e/681dfb8cb1e0012f85d41947_thumb-11.webp" alt="TeammateImage">
-                    </div>
-                        <div class="team-name-media">
-                           <div class="team-name">
-                            <h2>Lana Grady</h2>
-                            <p>Product Designer</p>
-                           </div> 
-                           <div class="team-social-media">
-                                <div class="social-icon">
-                                    {% partial 'icons/facebook'%}
-                                </div>
-                                <div class="social-icon">
-                                    {% partial 'icons/instagram'%}
-                                </div>
-                                <div class="social-icon">
-                                    {% partial 'icons/linkedin'%}
-                                </div>
-                           </div>
-                        </div>
-                </div>
-            </div>
+            {% endfor %}
             </div>
         </div>
     </div>

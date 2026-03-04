@@ -41,3 +41,142 @@ fields:
         label: Years of experience
         type: number
         validation: numeric
+    _s2: 
+        label: Section 2
+        type: section
+    s2_title:
+        label: Title
+        type: text
+        span: auto
+    s2_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s2_values:
+        label: Values
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                value_title:
+                    label: Title Value
+                    type: text
+                    span: auto
+                value_description:
+                    label: Description value
+                    type: textarea
+                    size: small
+                    span: auto
+                value_icon:
+                    label: Icon value
+                    type: text
+                    size: small
+    _s3:
+        label: Section 3
+        type: section
+    s3_title:
+        label: Title
+        type: text
+        span: auto
+    s3_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s3_partners:
+        label: Partners
+        mode: image
+        type: fileupload
+    _s4: 
+        label: Section 4
+        type: section
+    s4_title:
+        label: Title
+        type: text
+        span: auto
+    s4_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s4_ideas:
+        label: Ideas
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                s4_ideas_title:
+                    label: Title
+                    type: text
+                s4_ideas_description:
+                    label: Description
+                    type: textarea
+                    size: small
+    _s5:
+        label: Section 5
+        type: section
+
+    s5_title:
+        label: Title
+        type: text
+        span: auto
+    s5_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s5_recognitions:
+        label: Recognitions
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                recognition_award:
+                    label: Award
+                    type: text
+                recognition_community:
+                    label: Community
+                    type: text
+                    size: small
+                recognition_year:
+                    label: Recognition Year
+                    type: number
+                    size: small
+    _s6:
+        label: Section 6
+        type: section
+
+    s6_title:
+        label: Title
+        type: text
+        span: auto
+    s6_subtitle:
+        label: Subtitle
+        type: text
+        span: auto 
+    s6_team:
+        label: Team
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                team_name:
+                    label: Name
+                    type: text
+                team_designation:
+                    label: Designation
+                    type: text
+                    span: auto
+                facebook_url:
+                    label: Facebook
+                    type: text
+                    span: auto
+                instagram_url:
+                    label: Instagram
+                    type: text
+                    span: auto
+                linkeldin_url:
+                    label: Linkeldin
+                    type: text
+                    span: auto
+                team_image:
+                    label: Image
+                    type: fileupload
+                    mode: image

@@ -1158,6 +1158,10 @@ color: red;
 .team-social-media .social-icon:hover{
     transform: scale(1.3);
 }
+.social-icon a{
+    text-decoration: none;
+    color: black;
+}
 .section-heading-blog.services .brand-title h2{
     max-width: 1200px;
 }
