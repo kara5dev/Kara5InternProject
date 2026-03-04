@@ -2,7 +2,7 @@ uuid: e1ecacd0-888d-47a6-869a-c4d9931707e2
 handle: Page\ContactFooter
 type: single
 name: ContactFooter
-drafts: true
+drafts: false
 
 navigation: 
     parent: Page\Home

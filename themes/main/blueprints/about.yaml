@@ -1,0 +1,43 @@
+uuid: 01080282-3489-4720-ae09-e5c4586f8556
+handle: Page\AboutUs
+type: single
+name: About
+
+
+navigation: 
+    parent: Page\Home
+    label: About Page
+    order: 11
+
+fields:
+    _s1:
+       label: Section 1
+       type: section
+    s1_title:
+        label: Title
+        type: text
+        span: auto
+    s1_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s1_banner:
+        label: Banner Image
+        type: fileupload
+        mode: image
+    s1_description:
+        label: Description
+        size: small
+        type: textarea
+    s1_projects:
+        label: Projects Completed
+        type: number
+        validation: numeric
+    s1_client:
+        label: Client Satisfaction
+        type: number
+        validation: numeric
+    s1_years:
+        label: Years of experience
+        type: number
+        validation: numeric
