@@ -1,0 +1,26 @@
+uuid: bba58bea-b3fa-4fa7-8e43-bb5879669bc1
+handle: Page\PricingPlan
+type: single
+name: Pricing Page
+
+
+navigation: 
+    parent: Page\Home
+    label: Pricing Page
+    order: 12
+
+
+fields:
+    _s1:
+        label: Section 1
+        type: section
+    s1_title:
+        label: Title
+        type: text
+    s2_subtitle:
+        label: Subtitle
+        type: text
+    s2_clients:
+        label: Pricing Plan
+        type: entries
+        source: Page\Pricing

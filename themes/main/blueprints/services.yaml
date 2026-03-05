@@ -1,0 +1,53 @@
+uuid: 9cd65dfc-cefa-4d11-928e-be6ce7ecac13
+handle: Page\Services
+type: single
+name: Services
+
+
+
+navigation: 
+    parent: Page\Home
+    label: Service Page
+    order: 11
+
+fields:
+    _s1:
+        label: Section 1
+        type: section
+    s1_title:
+        label: Title
+        type: text
+    s1_subtitle:
+        label: Subtitle
+        type: text
+    s1_accordion: 
+        label: Accordion
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                service_title: 
+                    label: Service Title
+                    type: text
+                service_content:
+                    label: Content
+                    type: richeditor
+                    span: auto
+                service_image:
+                    label: Content Image
+                    mode: image
+                    type: fileupload
+                    span: auto
+    _s2:
+        label: Section 2
+        type: section
+    s2_title:
+        label: Title
+        type: text
+    s2_subtitle:
+        label: Subtitle
+        type: text
+    s2_clients:
+        label: Clients
+        type: entries
+        source: Page\Testimonials

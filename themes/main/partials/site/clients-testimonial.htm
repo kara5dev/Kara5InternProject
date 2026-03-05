@@ -6,16 +6,16 @@
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/quotes' %}
                     </div>
-                    <div class="hero-subtitle-text">CLIENTS TESTIMONIAL</div>
+                    <div class="hero-subtitle-text">{{subtitle}}</div>
                 </div>
                 <div class="brand-title">
-                    <h2>What Our Client Say's</h2>
+                    <h2>{{title}}</h2>
                 </div>
             </div>
         </div>
         <div class="swiper" data-animate-parent>
         <div class="swiper-wrapper" data-animate>
-           {% for clients in page.s6_clients %}
+           {% for client in clients %}
             <div class="swiper-slide">
                <div class="card-client">
                     <div class="feedback-top-container">
@@ -24,18 +24,18 @@
                             <h2>Feedback </h2>
                         </div>    
                         <div class="client-image">
-                            <img src="{{clients.clients_image[0].path}}" alt="ClientImage"/>
+                            <img src="{{client.clients_image[0].path}}" alt="ClientImage"/>
                         </div>
                     </div>
                     <div class="feedback-bottom-container">
                         <div class="client-name">
-                            <h1>{{ clients.clients_name}}</h1>
+                            <h1>{{ client.clients_name}}</h1>
                         </div>
                         <div class="client-position">
-                            <p>{{ clients.clients_designation }}</p>
+                            <p>{{ client.clients_designation }}</p>
                         </div>
                         <div class="client-testimonial">
-                            {{ clients.clients_review|raw}}
+                            {{ client.clients_review|raw}}
                         </div>
                     </div>
                </div>

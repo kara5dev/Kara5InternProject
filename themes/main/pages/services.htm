@@ -1,8 +1,10 @@
-title = "Services"
-layout = "default"
 url = "/services"
-==
+layout = "default"
+title = "Services"
 
+[section page]
+handle = "Page\Services"
+==
 <div class="services-section section-padding--y">
     <div class="container">
          <div class="section-heading-blog services" data-animate-parent>
@@ -10,15 +12,15 @@ url = "/services"
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/earth' %}
                     </div>
-                    <div class="hero-subtitle-text">OUR SERVICES</div>
+                    <div class="hero-subtitle-text">{{page.s1_subtitle}}</div>
                 </div>
                 <div class="brand-title" data-animate>
-                    <h2>Everything you need to grow online</h2>
+                    <h2>{{page.s1_title}}</h2>
                 </div>
         </div>
-        {% partial 'site/all-services'%}
+        {% partial 'site/all-services' services=page.s1_accordion %}
         <div class="client-container section-padding--t">
-        {% partial 'site/clients-testimonial'%}
+        {% partial 'site/clients-testimonial' clients = page.s2_clients title = page.s2_title subtitle = page.s2_subtitle %}
         </div>
     </div>
 </div>
