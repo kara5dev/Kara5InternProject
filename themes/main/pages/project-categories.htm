@@ -1,0 +1,69 @@
+url = "/projects/:slug"
+layout = "default"
+title = "project-categories"
+
+[collection projects]
+handle = "Projects\Project"
+
+[section projectCategory]
+handle = "Projects\Category"
+identifier = "slug"
+value = "{{ :slug }}"
+
+[collection projectCategories]
+handle = "Projects\Category"
+
+[section page]
+handle = "Page\Projects"
+==
+{% set filteredProjects = [] %}
+{% for project in projects %}
+    {% for cat in project.categories %}
+        {% if cat.id == projectCategory.id %}
+            {% set filteredProjects = filteredProjects|merge([project])%}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+<div class="project-category-section section-padding--y">
+
+    <div class="container">
+        <div class="section-heading-blog portfolio section-padding--b-2" data-animate-parent>
+                <div class="hero-subtitle" data-animate>
+                    <div class="hero-subtitle-icon">
+                        {% partial 'icons/earth' %}
+                    </div>
+                    <div class="hero-subtitle-text">{{page.s1_subtitle}}</div>
+                </div>
+                <div class="brand-title" data-animate>
+                    <h2>{{page.s1_title}}</h2>
+                </div>
+        </div>
+        <div class="category-menu"  data-animate-parent>
+            
+                 <a href="{{ 'projects'|page }}"
+                    class="category-item {{this.param.slug is empty ?  'active'}}" data-animate>
+                    <div>All Projects</div>
+                </a>
+             {% for category in projectCategories %}
+                <a href="{{ 'project-categories'|page({ slug: category.slug }) }}"
+                    class="category-item {{ this.param.slug is same as category.slug ? 'active' }}" data-animate>
+                    <div>{{ category.title }}</div>
+                </a>
+            {% endfor %}
+        </div>
+        <div role="list" class="projects-layout-2 w-dyn-items" data-animate-parent >
+            {% for project in filteredProjects %}
+                  <div role="list" class="w-dyn-item" data-animate>
+                  <div class="projects-item">
+                    <a href="#" class="projects-item-thumb-wrap">
+                        <img src="{{ project.banner.path }}" class="projects-item-thumb" alt="Purse" />
+                    </a>
+                    <a href="#" class="projects-item-thumb-wrap">
+                        <h2 class="project-item-title">{{project.title}}</h2>
+                    </a>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

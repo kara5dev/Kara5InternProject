@@ -28,14 +28,14 @@ handle = "Projects\Category"
         </div>
         <div class="category-menu"  data-animate-parent>
             
-                <a href="#"
-                    class="category-item active" data-animate>
-                    <div>All Blog</div>
+                <a href="{{ 'projects'|page }}"
+                    class="category-item {{this.param.slug is empty ?  'active'}}" data-animate>
+                    <div>All Projects</div>
                 </a>
-             {% for categories in projectCategory %}
-                <a href="#"
-                    class="category-item" data-animate>
-                    <div>{{categories.title}}</div>
+             {% for category in projectCategory %}
+                <a href="{{'project-categories'|page({ slug:category.slug }) }}"
+                    class="category-item {{this.param.slug is same as category.slug ? 'active'}}" data-animate>
+                    <div>{{category.title}}</div>
                 </a>
             {% endfor %}
         </div>

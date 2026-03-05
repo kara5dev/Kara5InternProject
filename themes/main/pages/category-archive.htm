@@ -30,16 +30,16 @@ postPage = "news-single"
                 </div>
             </div>
             {% if blogCategories.categories|length>0 %}
-            <div class="category-menu">
+            <div class="category-menu" data-animate-parent >
 
                 <a href="{{ 'blog'|page }}"
-                    class="category-item {% if not blogCategories.currentCategorySlug %}active{% endif %}">
+                    class="category-item {% if not blogCategories.currentCategorySlug %}active{% endif %}" data-animate>
                     <div>All Blog</div>
                 </a>
 
                 {% for category in blogCategories.categories %}
                 <a href="{{ 'category-archive'|page({ slug: category.slug }) }}"
-                    class="category-item {{ this.param.slug is same as category.slug ? 'active' }}">
+                    class="category-item {{ this.param.slug is same as category.slug ? 'active' }}" data-animate>
                     <div>{{ category.name }}</div>
                 </a>
                 {% endfor %}
