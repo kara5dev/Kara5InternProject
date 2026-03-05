@@ -13,6 +13,6 @@ handle = "Page\Home"
 {% partial 'site/services'%}
 {% partial 'site/featured-projects'%}
 {% partial 'site/clients-testimonial' clients = page.s6_clients title = page.s6_title subtitle = page.s6_subtitle %}
-{% partial 'site/pricing' %}
-{% partial 'site/questions' %}
+{% partial 'site/pricing' plans = page.s7_pricing title = page.s7_title subtitle = page.s7_subtitle  button = page.s7_button %}
+{% partial 'site/questions' title = page.s8_title subtitle = page.s8_subtitle questions = page.s8_accordion %}
 </div>

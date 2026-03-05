@@ -17,10 +17,38 @@ fields:
     s1_title:
         label: Title
         type: text
-    s2_subtitle:
+        span: auto
+    s1_subtitle:
         label: Subtitle
         type: text
-    s2_clients:
+        span: auto
+    s1_pricing:
         label: Pricing Plan
         type: entries
         source: Page\Pricing
+    s1_button:
+        label: Pricing Button
+        type: text
+    _s2:
+        label: Section 2
+        type: section
+    s2_title:
+        label: Title
+        type: text
+        span: auto
+    s2_subtitle:
+        label: Subtitle
+        type: text
+        span: auto
+    s2_accordion:
+        label: Accordion
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                question_title:
+                    label: Asked Question
+                    type: text
+                question_description:
+                    label: Description
+                    type: textarea

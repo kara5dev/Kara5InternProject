@@ -1,25 +1,25 @@
  <div class="row row-cols-1
             row-cols-md-2
             row-cols-xl-3  g-4 pricing-content" data-animate-parent>
-            {% for plans in page.s7_pricing %}
+            {% for plan in plans %}
             <div class="col" data-animate> 
                 <div class="pricing-item">
                 <div class="pricing-item-top">
                     <div class=" pricing-item-header">
-                        <h2>{{ plans.price_title}}</h2>
-                        {% if plans.is_professional %} 
+                        <h2>{{ plan.price_title}}</h2>
+                        {% if plan.is_professional %} 
                         <span class="popular">Popular</span>
                         {% endif %}
                     </div>
                     <div class="pricing-paragraph">
-                        {{plans.description}}
+                        {{plan.description}}
                     </div>
                      <div class="fs-md-4 price-content">
-                        <h2>$ {{plans.price |number_format(2, '.', '')}} USD/<span class="price-content-span">mo</span></h2>
+                        <h2>$ {{plan.price |number_format(2, '.', '')}} USD/<span class="price-content-span">mo</span></h2>
                     </div>
                     <div class="white-button m-0">
                             <a class="nav-link contact-link text-center" href="#">
-                                {{page.s7_button}}
+                                {{button}}
                                 <span class="arrow-wrapper">
                                     <span class="arrow arrow-1">{% partial 'icons/arrow-right'%}</span>
                                     <span class="arrow arrow-2">{% partial 'icons/arrow-right'%}</span>
@@ -30,7 +30,7 @@
                     <div class="pricing-item-border"></div>
                     <div class="price-content-items">
                          
-                         {{ plans.list_content|raw}}
+                         {{ plan.list_content|raw}}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,37 @@
+uuid: 943ea607-9a5d-4f1a-a340-44820f655c8b
+handle: Page\Contact
+type: single
+name: Contact
+
+
+navigation: 
+    parent: Page\Home
+    label: Contact Page
+    order: 11
+
+
+fields:
+    _s1:
+        label: Section 1
+        type: section
+    s1_title:
+        label: Title
+        type: text
+    s1_subtitle:
+        label: Subtitle
+        type: text
+    s1_contacts:
+        label: Contact Options
+        type: repeater
+        itemsExpanded: false
+        form: 
+            fields:
+                contact_icon:
+                    label: Icon
+                    type: text
+                contact_type:
+                    label: Contact Type
+                    type: text
+                contact_description:
+                    label: Description
+                    type: text

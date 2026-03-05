@@ -1,26 +1,18 @@
-title = "Pricing"
-layout = "default"
 url = "/pricing"
+layout = "default"
+title = "Pricing"
+
 [session]
 security = "user"
 redirect = "login"
+checkToken = 0
+
+[section page]
+handle = "Page\PricingPlan"
 ==
-<div class="pricing-section section-padding--y">
-    <div class="container">
-         <div class="section-heading-blog section-padding--b-2">
-                <div class="hero-subtitle">
-                    <div class="hero-subtitle-icon">
-                        {% partial 'icons/earth' %}
-                    </div>
-                    <div class="hero-subtitle-text">PRICING PLAN</div>
-                </div>
-                <div class="brand-title">
-                    <h2>Flexible pricing for every stage</h2>
-                </div>
-        </div>
-        {% partial 'site/pricing-contents'%}
-        <div class="questions-container-price section-padding--y">
-        {% partial 'site/questions'%}
+
+        {% partial 'site/pricing' plans = page.s1_pricing title = page.s1_title subtitle = page.s1_subtitle  button = page.s1_button %}
+        <div class="questions-container-price section-padding--b">
+        {% partial 'site/questions' title = page.s2_title subtitle = page.s2_subtitle questions = page.s2_accordion %}
         </div>
     </div>
-</div>
