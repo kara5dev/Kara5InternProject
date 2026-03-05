@@ -3,7 +3,7 @@
       {% if project.layoutType == 1 %}
               <div role="list" class="w-dyn-item" data-animate-parent>
                 <div class="projects-item" data-animate>
-                   <a href="#" class="projects-item-thumb-wrap">
+                   <a href="{{'project-description'|page({ slug: project.slug}) }}" class="projects-item-thumb-wrap">
                         <img src="{{ project.banner.path }}" class="projects-item-thumb" alt="Purse" />
                     </a>
                     <a href="#" class="projects-item-thumb-wrap">
@@ -19,7 +19,7 @@
             {% if project.layoutType == 2 %}
               <div role="list" class="w-dyn-item" data-animate-parent>
                 <div class="projects-item" data-animate>
-                    <a href="#" class="projects-item-thumb-wrap">
+                    <a href="{{'project-description'|page({ slug: project.slug}) }}" class="projects-item-thumb-wrap">
                         <img src="{{project.banner.path}}" class="projects-item-thumb" alt="Purse" />
                     </a>
                     <a href="#" class="projects-item-thumb-wrap">
@@ -35,7 +35,7 @@
         {% if project.layoutType == 3 %}
               <div role="list" class="w-dyn-item" data-animate-parent>
                 <div class="projects-item" data-animate>
-                    <a href="#" class="projects-item-thumb-wrap">
+                    <a href="{{'project-description'|page({ slug: project.slug}) }}" class="projects-item-thumb-wrap">
                         <img src="{{project.banner.path}}" class="projects-item-thumb" alt="Purse" />
                     </a>
                     <a href="#" class="projects-item-thumb-wrap">
