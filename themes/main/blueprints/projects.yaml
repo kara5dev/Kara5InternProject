@@ -1,0 +1,25 @@
+uuid: 88c0201d-29df-427f-89f2-2c96c3050222
+handle: Page\Projects
+type: single
+name: Projects
+
+
+navigation: 
+    parent: Page\Home
+    label: Projects Page
+    order: 12
+    
+fields:
+    _s1:
+        label: Section 1 
+        type: section
+    s1_title:
+        label: Title
+        type: text
+    s1_subtitle:
+        label: Subtitle
+        type: text
+    s1_projects:
+        label: Projects
+        type: entries
+        source: Projects\Project
