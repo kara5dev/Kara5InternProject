@@ -5,15 +5,19 @@ title = "blog"
 [blogCategories]
 slug = "{{ :category }}"
 displayEmpty = 1
+categoryPage = "blog/category"
 
 [blogPosts]
 pageNumber = "{{ :page }}"
+categoryFilter = "{{ :category }}"
 postsPerPage = 10
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "blog"
 postPage = "blog/post"
-categoryFilter = "{{ :category }}"
+
+[section page]
+handle = "Page\Blog"
 ==
 <div class="blog-wrapper">
     <div class="blog-section section-padding--y">
@@ -23,10 +27,10 @@ categoryFilter = "{{ :category }}"
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/earth' %}
                     </div>
-                    <div class="hero-subtitle-text">LATEST ARTICLES</div>
+                    <div class="hero-subtitle-text">{{page.s1_subtitle}}</div>
                 </div>
                 <div class="brand-title" data-animate>
-                    <h2>Creative ideas and inspiration</h2>
+                    <h2>{{page.s1_title}}</h2>
                 </div>
             </div>
             <div class="category-menu" data-animate-parent>

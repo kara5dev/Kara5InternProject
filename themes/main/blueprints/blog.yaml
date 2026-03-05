@@ -1,0 +1,23 @@
+uuid: a806fd80-9dbd-42df-a1e7-6fcde3430eb8
+handle: Page\Blog
+type: single
+name: Blog
+drafts: true
+
+navigation: 
+    parent: Page\Home
+    label:  Blog Page
+    order: 11
+
+fields:
+    _s1:
+       label: Section 1
+       type: section
+    s1_title:
+        label: Title
+        type: text
+        span: auto
+    s1_subtitle:
+        label: Subtitle
+        type: text
+        span: auto

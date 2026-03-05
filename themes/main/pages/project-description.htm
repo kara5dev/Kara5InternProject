@@ -1,0 +1,26 @@
+url = "/project/description/:slug"
+layout = "default"
+title = "project-description"
+
+[section project]
+handle = "Projects\Project"
+identifier = "slug"
+value = {{:slug}}
+==
+<div class="project-description-section section-padding--y">
+    <div class="container">
+        <div class="post-heading" data-animate-parent>
+            <h1 data-animate>{{project.title}}</h1>
+        </div>
+        {% if project.banner|length %}
+            <div class="blog-img" data-animate-parent>
+                <img src="{{project.banner.path }}" alt="BannerImg" data-animate>
+            </div>
+        {% endif %}
+        <div data-animate-parent>
+        <div class="blog-layout-content blog-dynamic-content" data-animate>
+                {{project.content|raw}}
+        </div>
+        </div>
+    </div>
+</div>

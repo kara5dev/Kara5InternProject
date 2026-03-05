@@ -44,7 +44,7 @@ handle = "Projects\Category"
                 {% if firstProject.layoutType == 1%}
                 <div role="list" class="w-dyn-item" data-animate>
                   <div class="projects-item">
-                    <a href="#" class="projects-item-thumb-wrap">
+                    <a href="{{'project-description'|page({ slug: firstProject.slug}) }}" class="projects-item-thumb-wrap">
                         <img src="{{ firstProject.banner.path }}" class="projects-item-thumb" alt="Purse" />
                     </a>
                     <a href="#" class="projects-item-thumb-wrap">
@@ -60,7 +60,7 @@ handle = "Projects\Category"
                 {% if secondProject.layoutType == 2 %}
                <div role="list" class="w-dyn-item" data-animate>
                         <div class="projects-item">
-                             <a href="#" class="projects-item-thumb-wrap">
+                             <a href="{{'project-description'|page({ slug: secondProject.slug}) }}" class="projects-item-thumb-wrap">
                                 <img src="{{secondProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
                             </a>
                             <a href="#" class="projects-item-thumb-wrap">
@@ -76,7 +76,7 @@ handle = "Projects\Category"
                 {% if thirdProject.layoutType == 3%}
              <div role="list" class="w-dyn-item"  data-animate>
                         <div class="projects-item">
-                             <a href="#" class="projects-item-thumb-wrap">
+                             <a href="{{'project-description'|page({ slug: thirdProject.slug}) }}" class="projects-item-thumb-wrap">
                                 <img src="{{thirdProject.banner.path}}" class="projects-item-thumb" alt="Purse" />
                             </a>
                             <a href="#" class="projects-item-thumb-wrap">
