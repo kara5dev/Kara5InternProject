@@ -126,6 +126,7 @@
     justify-content: space-between;
     flex-direction: column;
 }
+
 .heart-icon{
     color: white;
 }
@@ -700,6 +701,16 @@ color: red;
 }
 .section-heading-blog .brand-title h2{
     max-width: 820px;
+    font-size: clamp(40px,6vw,88px);
+    line-height: 1.05;
+}
+.section-heading-pricing{
+     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.section-heading-pricing .brand-title h2{
+    max-width: 720px;
     font-size: clamp(40px,6vw,88px);
     line-height: 1.05;
 }

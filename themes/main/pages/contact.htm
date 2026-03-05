@@ -3,6 +3,9 @@ layout = "default"
 title = "Contact"
 
 [contactForm]
+
+[section page]
+handle = "Page\Contact"
 ==
 <div class="contact-section section-padding--y">
 <div class="container">
@@ -11,40 +14,24 @@ title = "Contact"
             <div class="hero-subtitle-icon">
                 {% partial 'icons/earth' %}
             </div>
-            <div class="hero-subtitle-text">CONTACT US</div>
+            <div class="hero-subtitle-text">{{page.s1_subtitle}}</div>
         </div>
         <div class="brand-title" data-animate>
-            <h2>Together, let’s take your business further</h2>
+            <h2>{{page.s1_title}}</h2>
         </div>
     </div>
     <div class="contact-boxes" data-animate-parent>
+        {% for contact in page.s1_contacts %}
         <div class="contact-box" data-animate>
             <div class="icon-content">
-                {% partial 'icons/phone' %}
-                <p>(609) 598-3065 7980</p>
+                <i class="{{contact.contact_icon}}"></i>
+                <p>{{contact.contact_type}}</p>
             </div>
             <div class="contact-text-content">
-                Need a quick response? Reach out to us on WhatsApp
+                {{contact.contact_description}}
             </div>
         </div>
-        <div class="contact-box" data-animate>
-            <div class="icon-content">
-                {% partial 'icons/mail' %}
-                <p>hello@dexina.com</p>
-            </div>
-            <div class="contact-text-content">
-                Prefer email? Drop us a message anytime you want.
-            </div>
-        </div>
-        <div class="contact-box" data-animate>
-            <div class="icon-content">
-                {% partial 'icons/map-pin' %}
-                <p>CA, USA</p>
-            </div>
-            <div class="contact-text-content">
-               Want to meet face-to-face or visit our workspace?
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="form-wrapper section-padding--t">
         <div class="section-heading " data-animate-parent>
@@ -52,10 +39,10 @@ title = "Contact"
                     <div class="hero-subtitle-icon">
                         {% partial 'icons/target' %}
                     </div>
-                    <div class="hero-subtitle-text">GET IN TOUCH</div>
+                    <div class="hero-subtitle-text">{{page.s2_title}}</div>
                 </div>
                 <div class="brand-title" data-animate>
-                    <h2>Reach Out To Us</h2>
+                    <h2>{{page.s2_subtitle}}</h2>
                 </div>
         </div>
         <div data-animate-parent>

@@ -35,3 +35,12 @@ fields:
                 contact_description:
                     label: Description
                     type: text
+    _s2:
+        label: Section 2
+        type: section
+    s2_title:
+        label: Title
+        type: text
+    s2_subtitle:
+        label: Subtitle
+        type: text
