@@ -21,3 +21,8 @@ fields:
         label: Description
         type: text
         tab: Edit
+    projects:
+      label: Projects
+      type: entries
+      source: Projects\Project
+      inverse: categories

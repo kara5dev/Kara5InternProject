@@ -16,14 +16,7 @@ handle = "Projects\Category"
 [section page]
 handle = "Page\Projects"
 ==
-{% set filteredProjects = [] %}
-{% for project in projects %}
-    {% for cat in project.categories %}
-        {% if cat.id == projectCategory.id %}
-            {% set filteredProjects = filteredProjects|merge([project])%}
-        {% endif %}
-    {% endfor %}
-{% endfor %}
+
 <div class="project-category-section section-padding--y">
 
     <div class="container">
@@ -52,7 +45,7 @@ handle = "Page\Projects"
             {% endfor %}
         </div>
         <div role="list" class="projects-layout-2 w-dyn-items" data-animate-parent >
-            {% for project in filteredProjects %}
+            {% for project in projectCategory.projects %}
                   <div role="list" class="w-dyn-item" data-animate>
                   <div class="projects-item">
                     <a href="#" class="projects-item-thumb-wrap">
